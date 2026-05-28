@@ -1,6 +1,136 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
 * {
-    background-color: #f0f0f0;
+    color: #231F3F;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Comfortaa, sans-serif;
+}
+
+body {
+    background-color: #FFFFFF;
+    min-height: 100vh;
+}
+
+main {
+    padding-bottom: 70px;
+}
+
+.navigationBtns {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.blueBtn {
+    background-color: #231F3F;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 256px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.blueBtn svg {
+    background-color: transparent;
+    fill: white;
+}
+
+.blueBtn:hover {
+    background-color: #FFFFFF;
+    border: 2px solid #231F3F;
+    color: #231F3F;
+}
+
+/* Map page */
+.mapSection {
+    background-color: #231F3F;
+    border-radius: 30px;
+    padding: 32px;
+    color: white;
+    max-width: 400px;
+}
+
+.mapbtns {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 32px;
+    justify-content: center;
+    align-items: center;
+}
+
+.redBtn {
+    background-color: #D83541;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 256px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+.redBtn:hover {
+    background-color: #FFFFFF;
+    border: 2px solid #D83541;
+    color: #D83541;
+
+}
+
+.redBtn svg {
+    background-color: transparent;
+    fill: white;
+}
+
+
+.redBtn:hover svg {
+    background-color: transparent;
+    fill: #D83541;
+}
+
+.greenBtn {
+    background-color: #9FC422;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 256px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+.greenBtn:hover {
+    background-color: #FFFFFF;
+    border: 2px solid #9FC422;
+    color: #9FC422;
+}
+
+.greenBtn svg {
+    background-color: transparent;
+    fill: white;
+}
+
+.greenBtn:hover svg {
+    background-color: transparent;
+    fill: #9FC422;
+}
+
+/*opening hours page */
+.openingHours {
+    padding: 32px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }

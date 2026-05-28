@@ -1,0 +1,124 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 10px 0;
+}
+
+.header img {
+    height: 40px;
+    align-self: right;
+}
+
+
+/* Footer*/
+.bottomNav {
+    position: sticky;
+    bottom: 0;
+    bottom: env(safe-area-inset-bottom);
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #231F3F;
+    padding: 10px 0;
+}
+
+.bottomNav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    font-size: 12px;
+    gap: 4px;
+    color: white;
+    background: transparent;
+}
+
+
+.bottomNav svg {
+    font-size: 20px;
+    background: transparent;
+    fill: white;
+}
+
+.bottomNav span {
+    background: transparent;
+    color: white;
+}
+
+/* Contact Info */
+.contactInfo {
+    background-color: #231F3F;
+    border-radius: 30px;
+    padding: 32px;
+    color: white;
+    max-width: 400px;
+    margin: 32px;
+    text-align: center;
+}
+
+.contactInfo h2 {
+    margin-bottom: 16px;
+    color: white;
+}
+
+.contactInfo p {
+    margin: 4px 0;
+    color: white;
+}
+
+/* Help */
+.helpBtns {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 32px;
+    color: white;
+    margin-bottom: 32px;
+}
+
+
+.helpContactBtn:hover {
+    background-color: #FFFFFF;
+    border: 2px solid #231F3F;
+    color: #231F3F;
+}
+
+.helpFaqBtn {
+    background-color: #D83541;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 256px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+.helpFaqBtn:hover {
+    background-color: #FFFFFF;
+    border: 2px solid #D83541;
+    color: #D83541;
+}
+
+
+
+.helpContactBtn:hover a {
+    color: #231F3F;
+}
+
+.helpFaqBtn:hover a {
+    color: #D83541;
+}
