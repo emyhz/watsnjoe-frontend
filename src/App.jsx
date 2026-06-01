@@ -5,7 +5,7 @@ import logo_white from './images/logos/logo_white.png'
 import { FaArrowRight } from "react-icons/fa";
 import Map from './pages/phone/Map'
 import Visiting from './pages/phone/Visiting'
-import OpeningHours from "./pages/phone/OpeningHours";
+import OpeningHours from "./pages/phone/Openinghours";
 import Faq from "./pages/phone/Faq";
 import './App.css'
 import './styles/phone.css'

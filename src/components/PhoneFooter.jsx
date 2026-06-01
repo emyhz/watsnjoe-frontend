@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaHome, FaMapMarkerAlt, FaPhoneAlt, FaRegQuestionCircle } from "react-icons/fa";
 import './../styles/phone.css'
 import '../styles/PhoneHeaderFooter.css';
-import Map from "../pages/phone/map";
+import Map from "../pages/phone/Map";
 import Contactinfo from "../pages/phone/Contactinfo";
 import Help from "../pages/phone/Help";
 
