@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../images/logos/logo_no-bg.png'
 import iconsBackground from '../../images/logos/icons-background.png'
-import '../../styles/onboarding.css'
+import '../../styles/Onboarding.css'
 
 function Splash() {
     const navigate = useNavigate()
