@@ -7,10 +7,11 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    width: 100%; 
 }
 
 .splashLogo img{
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 /* Three overlapping shapes top-right, matching the prototype */
@@ -56,6 +57,11 @@
 }
 
 .splashLogo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     opacity: 0;
     transform: scale(0.95);
     transition: opacity 0.8s ease, transform 0.8s ease;
