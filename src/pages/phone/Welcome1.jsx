@@ -22,23 +22,21 @@ function Welcome1() {
                 </p>
             </div>
 
-            {/* Progress dots */}
-            <div className="welcomeDots">
+           <div className="welcomeDots">
                 <span className="dot dot--active" />
                 <span className="dot" />
                 <span className="dot" />
             </div>
-
+ 
             <div className="welcomeActions">
                 <button className="welcomeBtn welcomeBtn--primary" onClick={() => navigate('/Welcome2')}>
                     Volgende
                 </button>
-                <button className="welcomeBtn welcomeBtn--secondary" onClick={() => navigate('/WelcomeSkip')}>
+                <button className="welcomeBtn welcomeBtn--secondary" onClick={() => navigate('/App?skipped=1')}>
                     Overslaan
                 </button>
             </div>
         </div>
     )
 }
-
 export default Welcome1

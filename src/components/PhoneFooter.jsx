@@ -1,30 +1,21 @@
 import { Link } from "react-router-dom";
-import { FaHome, FaMapMarkerAlt, FaPhoneAlt, FaRegQuestionCircle } from "react-icons/fa";
-import './../styles/phone.css'
+import { FaHome, FaQuestionCircle } from "react-icons/fa";
+import { MdLocationPin } from "react-icons/md";
 import '../styles/PhoneHeaderFooter.css';
-import Map from "../pages/phone/Map";
-import Contactinfo from "../pages/phone/Contactinfo";
-import Help from "../pages/phone/Help";
-
 
 function PhoneFooter() {
     return (
         <footer className="bottomNav">
-            <Link to="/">
+            <Link to="/" className="bottomNav__item">
                 <FaHome />
-                <span>Home</span>
             </Link>
-            <Link to="/Map">
-                <FaMapMarkerAlt />
-                <span>Kaart</span>
+
+            <Link to="/Map" className="bottomNav__pin">
+                <MdLocationPin />
             </Link>
-            <Link to="/Contactinfo">
-                <FaPhoneAlt />
-                <span>Contact</span>
-            </Link>
-            <Link to="/Help">
-                <FaRegQuestionCircle />
-                <span>Help</span>
+
+            <Link to="/Help" className="bottomNav__item">
+                <FaQuestionCircle />
             </Link>
         </footer>
     );

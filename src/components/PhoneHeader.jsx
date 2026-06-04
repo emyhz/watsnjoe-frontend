@@ -1,15 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import LogoWhite from "../images/logos/logo_white.png";
-import "./../styles/phone.css";
-import './../styles/PhoneHeaderFooter.css';
-
+import logoColour from "../images/logos/logo_no-bg.png";
+import '../styles/PhoneHeaderFooter.css';
 
 function PhoneHeader() {
     return (
         <header className="header">
             <Link to="/">
-                <img src={LogoWhite} alt="Watsnjoe Logo" className="phoneLogo" />
+                <img src={logoColour} alt="WatsNJoe" />
             </Link>
         </header>
     );

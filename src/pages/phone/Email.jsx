@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../../App.css'
 import '../../styles/phone.css'
@@ -90,10 +89,9 @@ function EmailPage() {
 
                         {/* 4. Action Area with Button */}
                         <div className="email-action-zone">
-                            {/* You can swap this out for a <Link to="..."> later if it needs to navigate somewhere! */}
-                            <button className="purple-app-btn">
+                            <Link to="/Splash" className="purple-app-btn">
                                 Open routekaart via de app <FaArrowRight />
-                            </button>
+                            </Link>
                             <p className="kiosk-note">Of gebruik de kiosk bij de ingang voor een persoonlijke route.</p>
                         </div>
                     </div>

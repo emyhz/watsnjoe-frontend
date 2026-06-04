@@ -1,3 +1,4 @@
+/* ── Header ──────────────────────────────────────────────────────────────── */
 .header {
     position: sticky;
     top: 0;
@@ -8,17 +9,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFFFFF;
-    padding: 10px 0;
+    background-color: #ffffff;
+    padding: 12px 0;
 }
 
 .header img {
-    height: 40px;
-    align-self: right;
+    height: 36px;
+    width: auto;
+    display: block;
 }
 
-
-/* Footer*/
+/* ── Footer ──────────────────────────────────────────────────────────────── */
 .bottomNav {
     position: sticky;
     bottom: 0;
@@ -31,33 +32,118 @@
     justify-content: space-around;
     align-items: center;
     background-color: #231F3F;
-    padding: 10px 0;
+    border-radius: 20px 20px 0 0;
+    padding: 14px 40px 20px;
 }
 
-.bottomNav a {
+.bottomNav__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 28px;
+    opacity: 0.8;
+    transition: opacity 0.15s;
+}
+
+.bottomNav__item:hover { opacity: 1; }
+
+.bottomNav__item svg {
+    fill: #ffffff;
+    background: transparent;
+}
+
+.bottomNav__pin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #4CC9E0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 26px;
+    margin-top: -28px;
+    box-shadow: 0 4px 16px rgba(76, 201, 224, 0.5);
+    transition: transform 0.15s;
+}
+
+.bottomNav__pin:hover { transform: translateY(-2px); }
+
+.bottomNav__pin svg {
+    fill: #ffffff;
+    background: transparent;
+}
+
+/* ── Hallo banner ────────────────────────────────────────────────────────── */
+.halloBanner {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(90deg, #D94F5C 0%, #7B5EA7 55%, #4CC9E0 100%);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.halloBanner__text {
+    font-family: Comfortaa, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    padding-left: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.halloBanner__shapes {
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    height: 150px;
+    width: auto;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* ── App page shell ──────────────────────────────────────────────────────── */
+.appPage {
     display: flex;
     flex-direction: column;
+    min-height: 100dvh;
+}
+
+/* ── Home nav buttons ────────────────────────────────────────────────────── */
+.homeNav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 20px;
+    flex: 1;                    /* fills all remaining space between banner and footer */
+}
+
+.homeNav__btn {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    text-decoration: none;
-    font-size: 12px;
-    gap: 4px;
-    color: white;
-    background: transparent;
+    padding: 0 28px;
+    font-size: 18px;
+    width: 100%;
+    flex: 1;                    /* each button shares the available height equally */
+    min-height: 60px;           /* never shrink below this */
 }
 
-
-.bottomNav svg {
-    font-size: 20px;
+.homeNav__btn svg {
     background: transparent;
-    fill: white;
+    fill: #ffffff;
+    flex-shrink: 0;
+    font-size: 16px;
 }
 
-.bottomNav span {
-    background: transparent;
-    color: white;
-}
-
-/* Contact Info */
+/* ── Shared utility styles ───────────────────────────────────────────────── */
 .contactInfo {
     background-color: #231F3F;
     border-radius: 30px;
@@ -68,31 +154,15 @@
     text-align: center;
 }
 
-.contactInfo h2 {
-    margin-bottom: 16px;
-    color: white;
-}
+.contactInfo h2 { margin-bottom: 16px; color: white; }
+.contactInfo p  { margin: 4px 0; color: white; }
 
-.contactInfo p {
-    margin: 4px 0;
-    color: white;
-}
-
-/* Help */
 .helpBtns {
     display: flex;
     flex-direction: row;
     gap: 16px;
     margin-top: 32px;
-    color: white;
     margin-bottom: 32px;
-}
-
-
-.helpContactBtn:hover {
-    background-color: #FFFFFF;
-    border: 2px solid #231F3F;
-    color: #231F3F;
 }
 
 .helpFaqBtn {
@@ -113,12 +183,90 @@
     color: #D83541;
 }
 
-
-
-.helpContactBtn:hover a {
-    color: #231F3F;
+/* ── Skip modal ──────────────────────────────────────────────────────────── */
+.skipOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(30, 45, 78, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 24px;
 }
 
-.helpFaqBtn:hover a {
-    color: #D83541;
+.skipCard {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 0 28px 32px;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.skipChick {
+    display: flex;
+    justify-content: center;
+    margin-top: -60px;
+    margin-bottom: 12px;
+}
+
+.skipChick img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+.skipTitle {
+    font-family: Comfortaa, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #231F3F;
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+
+.skipBody {
+    font-family: Comfortaa, sans-serif;
+    font-size: 15px;
+    color: #4A5568;
+    line-height: 1.6;
+    margin: 0 0 24px;
+}
+
+.skipActions {
+    display: flex;
+    gap: 12px;
+}
+
+.skipBtn {
+    flex: 1;
+    padding: 15px 0;
+    border: none;
+    border-radius: 256px;
+    font-family: Comfortaa, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s;
+}
+
+.skipBtn:active { opacity: 0.85; }
+
+.skipBtn--red {
+    background-color: #D94F5C;
+    color: #ffffff;
+}
+
+.skipBtn--green {
+    background-color: #9FC422;
+    color: #ffffff;
 }
