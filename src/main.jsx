@@ -13,7 +13,7 @@ import Splash from './pages/phone/Splash.jsx';
 import Welcome1 from './pages/phone/Welcome1.jsx';
 import Welcome2 from './pages/phone/Welcome2.jsx';
 import Welcome3 from './pages/phone/Welcome3.jsx';
-
+import Email from "./pages/phone/Email.jsx";
 
 
 createRoot(document.getElementById('root')).render(
@@ -31,6 +31,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Faq" element={<Faq />} />
         <Route path="/Contactinfo" element={<Contactinfo />} />
         <Route path="/Help" element={<Help />} />
+        <Route path="/Email" element={<Email />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
