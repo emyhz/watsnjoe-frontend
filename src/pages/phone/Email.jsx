@@ -11,19 +11,19 @@ import logowatsnjoe from '../../images/logos/logo_blue_text.png'
 function EmailPage() {
     return (
         <>
-            <section id="center" style={{ padding: 0 }}> {/* Removing padding so the email banner stretches nicely */}
+            <section id="center" style={{ padding: 0 }}> {}
                 
-                {/* Outer container simulating the email client window inside the phone */}
+                {}
                 <div className="email-app-wrapper">
                     
                     {/* 1. Dark Blue Brand Header */}
                     <div className="email-header-banner">
                         <div className="brand-logo">
                             <span className="wats"><img src={logowatsnjoe} alt="Watsnjoe Logo" className="logo-img" /></span>
-                            <div className="logo-dots">
+                            {/* <div className="logo-dots">
                                 <span className="dot blue"></span>
                                 <span className="dot red"></span>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
