@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import '../../styles/onboarding.css'
+import '../../styles/Onboarding.css'
 import welcome_1_img from '../../images/icons/welcome_1_img.png'
 
 function Welcome1() {
