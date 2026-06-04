@@ -9,6 +9,7 @@ import OpeningHours from "./pages/phone/Openinghours";
 import Faq from "./pages/phone/Faq";
 import Help from "./pages/phone/Help";
 import Contactinfo from "./pages/phone/Contactinfo";
+import Email from "./pages/phone/Email.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Faq" element={<Faq />} />
         <Route path="/Contactinfo" element={<Contactinfo />} />
         <Route path="/Help" element={<Help />} />
+        <Route path="/Email" element={<Email />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
