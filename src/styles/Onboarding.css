@@ -1,5 +1,3 @@
-
-
 /* ── Splash */
 .splashPage {
     position: relative;
@@ -11,6 +9,10 @@
     overflow: hidden;
 }
 
+.splashLogo img{
+    width: 100%;
+    height: auto;
+}
 /* Three overlapping shapes top-right, matching the prototype */
 .splashShapes {
     position: absolute;
@@ -53,18 +55,37 @@
     background-color: #4CC9E0;
 }
 
-/* Logo fades + slides in */
 .splashLogo {
-    position: relative;
-    z-index: 1;
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .splashLogo--visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
+}
+
+.splash-bg-container {
+    position: absolute;
+    top: 50%;
+    right: -20%;
+    transform: translateY(-50%); 
+    z-index: 0;                 
+    pointer-events: none;       
+
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.splashBg--bottomLeft {
+    display: block;
+    max-width: 100%; /* Adjust as needed depending on your asset size */
+    height: auto;
+}
+
+.splash-bg-container--visible {
+    opacity: 1;
 }
 
 .splashLogoPlaceholder {
@@ -85,6 +106,8 @@
     font-weight: 400;
     opacity: 0.8;
 }
+
+
 
 /* ── Welcome pages (shared)*/
 .welcomePage {
