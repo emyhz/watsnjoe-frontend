@@ -1,0 +1,322 @@
+
+
+/* ── Splash */
+.splashPage {
+    position: relative;
+    min-height: 100dvh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Three overlapping shapes top-right, matching the prototype */
+.splashShapes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 320px;
+    pointer-events: none;
+}
+
+.splashShape {
+    position: absolute;
+    border-radius: 24px;
+}
+
+.splashShape--red {
+    top: 40px;
+    right: -10px;
+    width: 120px;
+    height: 160px;
+    border-radius: 24px;
+    background-color: #D94F5C;
+}
+
+.splashShape--purple {
+    top: 130px;
+    right: 10px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #7B5EA7;
+}
+
+.splashShape--blue {
+    top: 210px;
+    right: 20px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #4CC9E0;
+}
+
+/* Logo fades + slides in */
+.splashLogo {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.splashLogo--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.splashLogoPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 24px 40px;
+    border: 2.5px dashed #B0C4D8;
+    border-radius: 16px;
+    color: #8FA8BC;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.splashLogoPlaceholder small {
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* ── Welcome pages (shared)*/
+.welcomePage {
+    position: relative;
+    min-height: 100dvh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Blue circle blob peeking from left or right */
+.welcomeBlob {
+    position: absolute;
+    top: 0;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: #4CC9E0;
+    z-index: 0;
+}
+
+.welcomeBlob--left  { left: -50px; }
+.welcomeBlob--right { right: -50px; }
+
+/* Illustration area */
+.welcomeIllustration {
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+}
+
+.welcomeIllustration img {
+    max-height: 210px;
+    object-fit: contain;
+}
+
+.illustrationPlaceholder__icon {
+    font-size: 32px;
+}
+
+.illustrationPlaceholder small {
+    font-size: 11px;
+    opacity: 0.75;
+}
+
+/* Text block */
+.welcomeContent {
+    position: relative;
+    z-index: 1;
+    padding: 0 32px;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.welcomeTitle {
+    font-size: 26px;
+    font-weight: 700;
+    color: #231F3F;
+    margin-bottom: 12px;
+    line-height: 1.25;
+}
+
+.welcomeBody {
+    font-size: 16px;
+    font-weight: 400;
+    color: #4A5568;
+    line-height: 1.6;
+}
+
+/* Progress dots */
+.welcomeDots {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 8px;
+    margin-top: 28px;
+}
+
+.dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #C8D8A0;
+    transition: width 0.35s ease, background-color 0.35s ease;
+}
+
+.dot--active {
+    width: 28px;
+    background-color: #9FC422;
+}
+
+/* Buttons */
+.welcomeActions {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 28px 28px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: auto;
+}
+
+.welcomeBtn {
+    width: 100%;
+    padding: 18px 0;
+    border: none;
+    border-radius: 256px;
+    font-family: Comfortaa, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.welcomeBtn:active {
+    transform: scale(0.97);
+}
+
+/* Green "Volgende" / "Aan de slag!" */
+.welcomeBtn--primary {
+    background-color: #9FC422;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(159, 196, 34, 0.35);
+}
+
+.welcomeBtn--primary:hover {
+    background-color: #8ab31e;
+}
+
+/* Light-green "Overslaan" on welcome slides */
+.welcomeBtn--secondary {
+    background-color: #E8F5C8;
+    color: #231F3F;
+}
+
+.welcomeBtn--secondary:hover {
+    background-color: #d9ecb0;
+}
+
+/* ── WelcomeSkip page ──────────────────────────────────────────────────────── */
+.skipOverlay {
+    min-height: 100dvh;
+    background-color: rgba(30, 45, 78, 0.45);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.skipCard {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 0 28px 32px;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+/* Chick sits on top of the card */
+.skipChick {
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+    margin-bottom: 8px;
+}
+
+.chickPlaceholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #FFF9E6;
+    border: 3px solid #FFE57A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 32px;
+    color: #C9A227;
+}
+
+.chickPlaceholder small {
+    font-size: 9px;
+    color: #C9A227;
+    text-align: center;
+    line-height: 1.3;
+    padding: 0 4px;
+}
+
+.skipTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #231F3F;
+    margin: 4px 0 12px;
+    line-height: 1.2;
+}
+
+.skipBody {
+    font-size: 15px;
+    color: #4A5568;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.skipActions {
+    display: flex;
+    gap: 12px;
+}
+
+.skipActions .welcomeBtn {
+    flex: 1;
+    padding: 15px 0;
+    font-size: 16px;
+}
+
+/* Red "Overslaan" inside the skip modal */
+.welcomeBtn--skip {
+    background-color: #D94F5C;
+    color: #ffffff;
+}
+
+.welcomeBtn--skip:hover {
+    background-color: #c44050;
+}

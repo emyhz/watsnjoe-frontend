@@ -9,12 +9,22 @@ import OpeningHours from "./pages/phone/Openinghours";
 import Faq from "./pages/phone/Faq";
 import Help from "./pages/phone/Help";
 import Contactinfo from "./pages/phone/Contactinfo";
+import Splash from './pages/phone/Splash.jsx';
+import Welcome1 from './pages/phone/Welcome1.jsx';
+import Welcome2 from './pages/phone/Welcome2.jsx';
+import Welcome3 from './pages/phone/Welcome3.jsx';
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/Splash" element={<Splash />} />
+        <Route path="/Welcome1" element={<Welcome1 />} />
+        <Route path="/Welcome2" element={<Welcome2 />} />
+        <Route path="/Welcome3" element={<Welcome3 />} />
         <Route path="/Visiting" element={<Visiting />} />
         <Route path="/Map" element={<Map />} />
         <Route path="/OpeningHours" element={<OpeningHours />} />
