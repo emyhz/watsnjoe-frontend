@@ -6,7 +6,7 @@ import '../styles/PhoneHeaderFooter.css';
 function PhoneFooter() {
     return (
         <footer className="bottomNav">
-            <Link to="/" className="bottomNav__item">
+            <Link to="/App" className="bottomNav__item">
                 <FaHome />
             </Link>
 
