@@ -14,6 +14,7 @@ import Welcome2 from './pages/phone/Welcome2.jsx';
 import Welcome3 from './pages/phone/Welcome3.jsx';
 import Email from "./pages/phone/Email.jsx";
 import FloorMap from "./pages/phone/FloorMap.jsx";
+import SecondFloor from "./pages/phone/SecondFloor.jsx";
 
 
 createRoot(document.getElementById('root')).render(
@@ -33,6 +34,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Help" element={<Help />} />
         <Route path="/Email" element={<Email />} />
         <Route path="/FloorMap" element={<FloorMap />} />
+        <Route path="/SecondFloor" element={<SecondFloor />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
