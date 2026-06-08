@@ -14,6 +14,7 @@ import Welcome1 from './pages/phone/Welcome1.jsx';
 import Welcome2 from './pages/phone/Welcome2.jsx';
 import Welcome3 from './pages/phone/Welcome3.jsx';
 import Email from "./pages/phone/Email.jsx";
+import FloorMap from "./pages/phone/FloorMap.jsx";
 
 
 createRoot(document.getElementById('root')).render(
@@ -21,7 +22,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Email />} />
-        <Route path="/App" element={<App />} />  
+        <Route path="/App" element={<App />} />
         <Route path="/Splash" element={<Splash />} />
         <Route path="/Welcome1" element={<Welcome1 />} />
         <Route path="/Welcome2" element={<Welcome2 />} />
@@ -33,6 +34,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Contactinfo" element={<Contactinfo />} />
         <Route path="/Help" element={<Help />} />
         <Route path="/Email" element={<Email />} />
+        <Route path="/map" element={<FloorMap />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
