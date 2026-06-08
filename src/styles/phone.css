@@ -321,3 +321,201 @@ main {
     float: left;
 
 }
+
+.faq-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq-list {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px; /* Distinct gap between closed tabs */
+}
+
+.faq-item-wrapper {
+    width: 100%;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Base button style (Closed state) */
+.faq-button {
+    width: 100%;
+    background-color: #9FC422; /* The specific lime/green from your second screenshot */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Full capsule look */
+    padding: 18px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: border-radius 0.2s ease, background-color 0.2s ease;
+}
+
+.faq-question {
+    max-width: 80%;
+    color:white;
+}
+
+.faq-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ─── OPEN STATE TRANSFORMATIONS ─── */
+
+.faq-item-wrapper.open .faq-button {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #9FC422;
+}
+
+.faq-item-wrapper .faq-answer-panel {
+    max-height: 0;
+    overflow: hidden;
+    background-color: rgba(154, 202, 40, 0.8);    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: max-height 0.3s ease-out;
+}
+
+.faq-item-wrapper.open .faq-answer-panel {
+    max-height: 250px; 
+}
+
+.faq-answer-content {
+    padding: 10px 24px 24px 24px;
+    color: white; /* Matches the white text from the 2nd picture */
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.faq-answer-content p {
+    color: white !important; /* Forces the text inside the <p> tag to be white */
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.faq-arrow svg {
+    stroke: white !important;
+}
+
+/* Isolated Container for Opening Hours view */
+.hours-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hours-main-title {
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.hours-main-title h1 {
+    font-size: 28px;
+    color: #000000;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Accordion Component Elements */
+.hours-accordion-list {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hours-card-wrapper {
+    width: 100%;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    overflow: hidden; 
+}
+
+/* Button Control Setup */
+.hours-toggle-btn {
+    width: 100%;
+    background-color: #9FC422; 
+    border: none;
+    border-radius: 30px; 
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: border-radius 0.2s ease;
+}
+
+.hours-card-title {
+    color: #ffffff !important;
+}
+
+.hours-arrow-icon svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    font-size: 18px;
+    display: block;
+}
+
+/* Open Panel Modifier Classes */
+.hours-card-wrapper.hours-is-open .hours-toggle-btn {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.hours-dropdown-panel {
+    max-height: 0;
+    overflow: hidden;
+    background-color: rgba(159, 196, 34, 0.85); 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: max-height 0.3s ease-out;
+}
+
+.hours-card-wrapper.hours-is-open .hours-dropdown-panel {
+    max-height: 300px; 
+}
+
+/* Timetable Layout Design */
+.hours-dropdown-content {
+    padding: 12px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hours-data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.hours-day-label, 
+.hours-time-value {
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.hours-time-value {
+    text-align: right;
+}
