@@ -8,6 +8,7 @@ import Phonefooter from '../../components/PhoneFooter'
 import { FaPrint } from "react-icons/fa"
 import { useNavigate } from 'react-router-dom'
 import floorplanImg from '../../images/0floor_Page_1.png'
+import SecondFloor from "./SecondFloor";
 
 // ─── NODES ────────────────────────────────────────────────────────────────────
 // Rooms: visible clickable markers
@@ -209,7 +210,7 @@ function Map() {
                         </button>
                         <button
                             className="map-floor-tab"
-                            onClick={() => navigate('/secondfloor')}
+                            onClick={() => navigate('/SecondFloor')}
                         >
                             Eerste verdieping
                         </button>
