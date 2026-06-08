@@ -15,6 +15,7 @@ import Welcome3 from './pages/phone/Welcome3.jsx';
 import Email from "./pages/phone/Email.jsx";
 import FloorMap from "./pages/phone/FloorMap.jsx";
 import SecondFloor from "./pages/phone/SecondFloor.jsx";
+import MapCombined from "./pages/phone/MapCombined.jsx";
 
 
 createRoot(document.getElementById('root')).render(
