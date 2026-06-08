@@ -12,47 +12,47 @@ import floorplan1Img from '../../images/0floor_Page_2.jpeg'
 
 // ─── FLOOR 0 NODES ───────────────────────────────────────────────────────────
 const NODES_0 = [
-    { id: "0.01", label: "Ingang",       area: "", px: 65.9, py: 78.3, floor: 0 },
-    { id: "0.80", label: "Grand Café",   area: "", px: 24.5, py: 48.4, floor: 0 },
-    { id: "0.70", label: "Bruisend Hart",area: "", px: 40.9, py: 52,   floor: 0 },
-    { id: "0.60", label: "Open Ruimte",  area: "", px: 41.1, py: 20.2, floor: 0 },
-    { id: "0.93", label: "0.93",         area: "", px: 24.5, py: 7.5,  floor: 0 },
-    { id: "0.64", label: "0.64",         area: "", px: 26.2, py: 22.1, floor: 0 },
-    { id: "0.65", label: "0.65",         area: "", px: 26.6, py: 27.1, floor: 0 },
-    { id: "0.66", label: "0.66",         area: "", px: 28.2, py: 31.8, floor: 0 },
-    { id: "0.71", label: "0.71",         area: "", px: 26.4, py: 36.8, floor: 0 },
-    { id: "0.61", label: "0.61",         area: "", px: 56.4, py: 21.6, floor: 0 },
-    { id: "0.62", label: "0.62",         area: "", px: 54.3, py: 30.7, floor: 0 },
-    { id: "0.72", label: "0.72",         area: "", px: 54.6, py: 42.9, floor: 0 },
-    { id: "0.73", label: "0.73",         area: "", px: 56.6, py: 49.5, floor: 0 },
-    { id: "0.74", label: "0.74",         area: "", px: 54.4, py: 57.8, floor: 0 },
-    { id: "0.75", label: "0.75",         area: "", px: 54.6, py: 68.2, floor: 0 },
-    { id: "0.54", label: "0.54",         area: "", px: 34.4, py: 7.4,  floor: 0 },
-    { id: "0.53", label: "0.53",         area: "", px: 40.6, py: 7.3,  floor: 0 },
-    { id: "0.52", label: "0.52",         area: "", px: 46.7, py: 7.5,  floor: 0 },
-    { id: "0.44", label: "0.44",         area: "", px: 58.6, py: 10.8, floor: 0 },
-    { id: "0.42", label: "0.42",         area: "", px: 76.5, py: 15.9, floor: 0 },
-    { id: "0.41", label: "0.41",         area: "", px: 76.9, py: 21.9, floor: 0 },
-    { id: "0.24", label: "0.24",         area: "", px: 71.8, py: 48.1, floor: 0 },
-    { id: "0.22", label: "0.22",         area: "", px: 80.5, py: 51.2, floor: 0 },
-    { id: "0.23", label: "0.23",         area: "", px: 71.6, py: 54.6, floor: 0 },
-    { id: "0.14", label: "0.14",         area: "", px: 81.5, py: 68.2, floor: 0 },
+    { id: "0.01", label: "Ingang", area: "", px: 65.9, py: 78.3, floor: 0 },
+    { id: "0.80", label: "Grand Café", area: "", px: 24.5, py: 48.4, floor: 0 },
+    { id: "0.70", label: "Bruisend Hart", area: "", px: 40.9, py: 52, floor: 0 },
+    { id: "0.60", label: "Open Ruimte", area: "", px: 41.1, py: 20.2, floor: 0 },
+    { id: "0.93", label: "0.93", area: "", px: 24.5, py: 7.5, floor: 0 },
+    { id: "0.64", label: "0.64", area: "", px: 26.2, py: 22.1, floor: 0 },
+    { id: "0.65", label: "0.65", area: "", px: 26.6, py: 27.1, floor: 0 },
+    { id: "0.66", label: "0.66", area: "", px: 28.2, py: 31.8, floor: 0 },
+    { id: "0.71", label: "0.71", area: "", px: 26.4, py: 36.8, floor: 0 },
+    { id: "0.61", label: "0.61", area: "", px: 56.4, py: 21.6, floor: 0 },
+    { id: "0.62", label: "0.62", area: "", px: 54.3, py: 30.7, floor: 0 },
+    { id: "0.72", label: "0.72", area: "", px: 54.6, py: 42.9, floor: 0 },
+    { id: "0.73", label: "0.73", area: "", px: 56.6, py: 49.5, floor: 0 },
+    { id: "0.74", label: "0.74", area: "", px: 54.4, py: 57.8, floor: 0 },
+    { id: "0.75", label: "0.75", area: "", px: 54.6, py: 68.2, floor: 0 },
+    { id: "0.54", label: "0.54", area: "", px: 34.4, py: 7.4, floor: 0 },
+    { id: "0.53", label: "0.53", area: "", px: 40.6, py: 7.3, floor: 0 },
+    { id: "0.52", label: "0.52", area: "", px: 46.7, py: 7.5, floor: 0 },
+    { id: "0.44", label: "0.44", area: "", px: 58.6, py: 10.8, floor: 0 },
+    { id: "0.42", label: "0.42", area: "", px: 76.5, py: 15.9, floor: 0 },
+    { id: "0.41", label: "0.41", area: "", px: 76.9, py: 21.9, floor: 0 },
+    { id: "0.24", label: "0.24", area: "", px: 71.8, py: 48.1, floor: 0 },
+    { id: "0.22", label: "0.22", area: "", px: 80.5, py: 51.2, floor: 0 },
+    { id: "0.23", label: "0.23", area: "", px: 71.6, py: 54.6, floor: 0 },
+    { id: "0.14", label: "0.14", area: "", px: 81.5, py: 68.2, floor: 0 },
     // Floor 0 corridor waypoints
-    { id: "c.L1",  corridor: true, px: 33.3, py: 21.8, floor: 0 },
-    { id: "c.L2",  corridor: true, px: 33.6, py: 27.1, floor: 0 },
-    { id: "c.L3",  corridor: true, px: 19.6, py: 33.1, floor: 0 },
-    { id: "c.L4",  corridor: true, px: 20.5, py: 41.6, floor: 0 },
-    { id: "c.L5",  corridor: true, px: 24.5, py: 57.9, floor: 0 },
-    { id: "c.H2",  corridor: true, px: 39,   py: 49,   floor: 0 },
-    { id: "c.H4",  corridor: true, px: 61.5, py: 52.3, floor: 0 },
-    { id: "c.R1",  corridor: true, px: 66.1, py: 15.6, floor: 0 },
-    { id: "c.R2",  corridor: true, px: 65.3, py: 36.1, floor: 0 },
-    { id: "c.R3",  corridor: true, px: 47.1, py: 20.8, floor: 0 },
-    { id: "c.R4",  corridor: true, px: 47.8, py: 40.2, floor: 0 },
-    { id: "c.F3",  corridor: true, px: 65.2, py: 42.4, floor: 0 },
-    { id: "c.F4",  corridor: true, px: 65.3, py: 52.7, floor: 0 },
-    { id: "c.F5",  corridor: true, px: 66.1, py: 58.5, floor: 0 },
-    { id: "c.B1",  corridor: true, px: 39.5, py: 61.4, floor: 0 },
+    { id: "c.L1", corridor: true, px: 33.3, py: 21.8, floor: 0 },
+    { id: "c.L2", corridor: true, px: 33.6, py: 27.1, floor: 0 },
+    { id: "c.L3", corridor: true, px: 19.6, py: 33.1, floor: 0 },
+    { id: "c.L4", corridor: true, px: 20.5, py: 41.6, floor: 0 },
+    { id: "c.L5", corridor: true, px: 24.5, py: 57.9, floor: 0 },
+    { id: "c.H2", corridor: true, px: 39, py: 49, floor: 0 },
+    { id: "c.H4", corridor: true, px: 61.5, py: 52.3, floor: 0 },
+    { id: "c.R1", corridor: true, px: 66.1, py: 15.6, floor: 0 },
+    { id: "c.R2", corridor: true, px: 65.3, py: 36.1, floor: 0 },
+    { id: "c.R3", corridor: true, px: 47.1, py: 20.8, floor: 0 },
+    { id: "c.R4", corridor: true, px: 47.8, py: 40.2, floor: 0 },
+    { id: "c.F3", corridor: true, px: 65.2, py: 42.4, floor: 0 },
+    { id: "c.F4", corridor: true, px: 65.3, py: 52.7, floor: 0 },
+    { id: "c.F5", corridor: true, px: 66.1, py: 58.5, floor: 0 },
+    { id: "c.B1", corridor: true, px: 39.5, py: 61.4, floor: 0 },
     { id: "c.X20", corridor: true, px: 33.2, py: 16.5, floor: 0 },
     { id: "c.X22", corridor: true, px: 43.2, py: 53.9, floor: 0 },
     { id: "c.X23", corridor: true, px: 59.4, py: 63.6, floor: 0 },
@@ -68,39 +68,39 @@ const NODES_0 = [
     { id: "c.X33", corridor: true, px: 80.8, py: 58.8, floor: 0 },
     // ── Stairs & lift on floor 0 ─────────────────────────────────────────────
     // Adjust px/py to match actual staircase/lift positions on your floorplan
-    { id: "stairs.0", label: "Trap",  stairs: true, px: 44, py: 43, floor: 0 },
-    { id: "lift.0",   label: "Lift",  lift: true,   px: 46, py: 44, floor: 0 },
+    { id: "stairs.0", label: "Trap", stairs: true, px: 44, py: 43, floor: 0 },
+    { id: "lift.0", label: "Lift", lift: true, px: 46, py: 44, floor: 0 },
 ]
 
 // ─── FLOOR 1 NODES ───────────────────────────────────────────────────────────
 const NODES_1 = [
-    { id: "1.02", label: "Lokaal 1.02", area: "108.34 m²", px: 54.6, py: 76,   floor: 1 },
-    { id: "1.03", label: "Lokaal 1.03", area: "27.81 m²",  px: 64.9, py: 80.5, floor: 1 },
-    { id: "1.04", label: "Lokaal 1.04", area: "27.81 m²",  px: 71.3, py: 80.4, floor: 1 },
-    { id: "1.05", label: "Lokaal 1.05", area: "42.15 m²",  px: 78.4, py: 80.4, floor: 1 },
-    { id: "1.06", label: "Lokaal 1.06", area: "71.96 m²",  px: 80.6, py: 75,   floor: 1 },
-    { id: "1.09", label: "Lokaal 1.09", area: "",           px: 74.2, py: 74,   floor: 1 },
-    { id: "1.10", label: "Lokaal 1.10", area: "70.68 m²",  px: 66.4, py: 63,   floor: 1 },
+    { id: "1.02", label: "Lokaal 1.02", area: "108.34 m²", px: 54.6, py: 76, floor: 1 },
+    { id: "1.03", label: "Lokaal 1.03", area: "27.81 m²", px: 64.9, py: 80.5, floor: 1 },
+    { id: "1.04", label: "Lokaal 1.04", area: "27.81 m²", px: 71.3, py: 80.4, floor: 1 },
+    { id: "1.05", label: "Lokaal 1.05", area: "42.15 m²", px: 78.4, py: 80.4, floor: 1 },
+    { id: "1.06", label: "Lokaal 1.06", area: "71.96 m²", px: 80.6, py: 75, floor: 1 },
+    { id: "1.09", label: "Lokaal 1.09", area: "", px: 74.2, py: 74, floor: 1 },
+    { id: "1.10", label: "Lokaal 1.10", area: "70.68 m²", px: 66.4, py: 63, floor: 1 },
     { id: "1.21", label: "Lokaal 1.21", area: "112.54 m²", px: 78.2, py: 60.5, floor: 1 },
     { id: "1.22", label: "Lokaal 1.22", area: "167.71 m²", px: 54.7, py: 49.3, floor: 1 },
-    { id: "1.24", label: "Lokaal 1.24", area: "",           px: 61.8, py: 51.6, floor: 1 },
-    { id: "1.25", label: "Lokaal 1.25", area: "",           px: 61.9, py: 48.9, floor: 1 },
-    { id: "1.26", label: "Lokaal 1.26", area: "",           px: 61.8, py: 45.1, floor: 1 },
+    { id: "1.24", label: "Lokaal 1.24", area: "", px: 61.8, py: 51.6, floor: 1 },
+    { id: "1.25", label: "Lokaal 1.25", area: "", px: 61.9, py: 48.9, floor: 1 },
+    { id: "1.26", label: "Lokaal 1.26", area: "", px: 61.8, py: 45.1, floor: 1 },
     { id: "1.27", label: "Lokaal 1.27", area: "113.32 m²", px: 78.2, py: 50.1, floor: 1 },
     { id: "1.28", label: "Lokaal 1.28", area: "112.97 m²", px: 77.9, py: 39.7, floor: 1 },
-    { id: "1.30", label: "Lokaal 1.30", area: "40.90 m²",  px: 65.1, py: 35.9, floor: 1 },
-    { id: "1.31", label: "Lokaal 1.31", area: "",           px: 54.8, py: 32.8, floor: 1 },
+    { id: "1.30", label: "Lokaal 1.30", area: "40.90 m²", px: 65.1, py: 35.9, floor: 1 },
+    { id: "1.31", label: "Lokaal 1.31", area: "", px: 54.8, py: 32.8, floor: 1 },
     { id: "1.43", label: "Lokaal 1.43", area: "128.02 m²", px: 76.2, py: 18.2, floor: 1 },
-    { id: "1.44", label: "Lokaal 1.44", area: "56.54 m²",  px: 58.8, py: 10.6, floor: 1 },
-    { id: "1.51", label: "Lokaal 1.51", area: "61.31 m²",  px: 46.7, py: 9.5,  floor: 1 },
-    { id: "1.52", label: "Lokaal 1.52", area: "",           px: 30.7, py: 9.4,  floor: 1 },
-    { id: "1.53", label: "Lokaal 1.53", area: "",           px: 26.7, py: 12.5, floor: 1 },
-    { id: "1.60", label: "Lokaal 1.60", area: "41.72 m²",  px: 49.5, py: 36.8, floor: 1 },
-    { id: "1.61", label: "Lokaal 1.61", area: "",           px: 55.2, py: 29.2, floor: 1 },
-    { id: "1.62", label: "Lokaal 1.62", area: "",           px: 40.9, py: 37.3, floor: 1 },
+    { id: "1.44", label: "Lokaal 1.44", area: "56.54 m²", px: 58.8, py: 10.6, floor: 1 },
+    { id: "1.51", label: "Lokaal 1.51", area: "61.31 m²", px: 46.7, py: 9.5, floor: 1 },
+    { id: "1.52", label: "Lokaal 1.52", area: "", px: 30.7, py: 9.4, floor: 1 },
+    { id: "1.53", label: "Lokaal 1.53", area: "", px: 26.7, py: 12.5, floor: 1 },
+    { id: "1.60", label: "Lokaal 1.60", area: "41.72 m²", px: 49.5, py: 36.8, floor: 1 },
+    { id: "1.61", label: "Lokaal 1.61", area: "", px: 55.2, py: 29.2, floor: 1 },
+    { id: "1.62", label: "Lokaal 1.62", area: "", px: 40.9, py: 37.3, floor: 1 },
     { id: "1.63", label: "Lokaal 1.63", area: "110.63 m²", px: 41.4, py: 16.2, floor: 1 },
     { id: "1.64", label: "Lokaal 1.64", area: "107.13 m²", px: 40.8, py: 62.6, floor: 1 },
-    { id: "1.23", label: "Lokaal 1.23", area: "",           px: 62,   py: 54.3, floor: 1 },
+    { id: "1.23", label: "Lokaal 1.23", area: "", px: 62, py: 54.3, floor: 1 },
     // Floor 1 corridor waypoints
     { id: "c.X23", corridor: true, px: 58.3, py: 15.5, floor: 1 },
     { id: "c.X24", corridor: true, px: 65.2, py: 15.5, floor: 1 },
@@ -113,11 +113,11 @@ const NODES_1 = [
     { id: "c.X31", corridor: true, px: 34.3, py: 37.4, floor: 1 },
     { id: "c.X32", corridor: true, px: 34.4, py: 16.3, floor: 1 },
     { id: "c.X33", corridor: true, px: 47.1, py: 16.1, floor: 1 },
-    { id: "c.X34", corridor: true, px: 38,   py: 10.9, floor: 1 },
+    { id: "c.X34", corridor: true, px: 38, py: 10.9, floor: 1 },
     { id: "c.X35", corridor: true, px: 34.2, py: 12.2, floor: 1 },
-    { id: "c.X36", corridor: true, px: 47.4, py: 30,   floor: 1 },
+    { id: "c.X36", corridor: true, px: 47.4, py: 30, floor: 1 },
     { id: "c.X37", corridor: true, px: 47.6, py: 37.6, floor: 1 },
-    { id: "c.X38", corridor: true, px: 54.7, py: 47,   floor: 1 },
+    { id: "c.X38", corridor: true, px: 54.7, py: 47, floor: 1 },
     { id: "c.X39", corridor: true, px: 55.1, py: 53.4, floor: 1 },
     { id: "c.X40", corridor: true, px: 52.5, py: 62.5, floor: 1 },
     { id: "c.X41", corridor: true, px: 55.4, py: 58.6, floor: 1 },
@@ -128,10 +128,10 @@ const NODES_1 = [
     { id: "c.X46", corridor: true, px: 54.7, py: 43.3, floor: 1 },
     { id: "c.X47", corridor: true, px: 65.2, py: 74.3, floor: 1 },
     { id: "c.X48", corridor: true, px: 65.2, py: 76.5, floor: 1 },
-    { id: "c.X49", corridor: true, px: 73,   py: 76.5, floor: 1 },
+    { id: "c.X49", corridor: true, px: 73, py: 76.5, floor: 1 },
     { id: "c.X50", corridor: true, px: 77.5, py: 76.4, floor: 1 },
     { id: "c.X51", corridor: true, px: 66.4, py: 48.9, floor: 1 },
-    { id: "c.X55", corridor: true, px: 70,   py: 58.9, floor: 1 },
+    { id: "c.X55", corridor: true, px: 70, py: 58.9, floor: 1 },
     { id: "c.X56", corridor: true, px: 34.4, py: 61.1, floor: 1 },
     { id: "c.X57", corridor: true, px: 56.6, py: 65.1, floor: 1 },
     { id: "c.X58", corridor: true, px: 70.5, py: 46.8, floor: 1 },
@@ -139,8 +139,8 @@ const NODES_1 = [
     { id: "c.X60", corridor: true, px: 47.3, py: 61.2, floor: 1 },
     // ── Stairs & lift on floor 1 ─────────────────────────────────────────────
     // Adjust px/py to match actual staircase/lift positions on your floorplan
-    { id: "stairs.1", label: "Trap",  stairs: true, px: 47.6, py: 37.6, floor: 1 },
-    { id: "lift.1",   label: "Lift",  lift: true,   px: 49,   py: 37,   floor: 1 },
+    { id: "stairs.1", label: "Trap", stairs: true, px: 47.6, py: 37.6, floor: 1 },
+    { id: "lift.1", label: "Lift", lift: true, px: 49, py: 37, floor: 1 },
 ]
 
 const ALL_NODES = [...NODES_0, ...NODES_1]
@@ -173,21 +173,21 @@ const GRAPH = {
     "0.22": ["c.F5", "0.24", "0.23", "c.X32", "c.X33"],
     "0.23": ["0.22"],
     "0.14": ["c.X25"],
-    "c.L1":  ["c.L2", "c.X20", "0.64", "0.60"],
-    "c.L2":  ["c.L1", "0.64", "0.60", "c.H2", "0.66", "0.65"],
-    "c.L3":  ["0.65", "c.L4", "c.X26"],
-    "c.L4":  ["c.L3", "0.66", "c.L5", "0.80"],
-    "c.L5":  ["c.L4", "0.71", "0.80", "c.H2"],
-    "c.H2":  ["c.L5", "0.70", "c.R4", "c.X22", "c.L2", "0.80", "stairs.0", "lift.0"],
-    "c.H4":  ["0.73", "c.F4"],
-    "c.R1":  ["0.44", "c.R2", "0.42", "c.X29", "c.X30"],
-    "c.R2":  ["c.R1", "c.F3", "c.X31"],
-    "c.R3":  ["0.60", "0.61", "c.R4", "c.X28", "c.X30"],
-    "c.R4":  ["c.R3", "0.62", "c.H2", "c.X22", "c.X31"],
-    "c.F3":  ["0.24", "c.F4", "c.R2", "c.X32"],
-    "c.F4":  ["c.F3", "c.F5", "c.H4"],
-    "c.F5":  ["c.F4", "0.22", "0.01", "c.X33"],
-    "c.B1":  ["0.70", "c.X24", "c.X23"],
+    "c.L1": ["c.L2", "c.X20", "0.64", "0.60"],
+    "c.L2": ["c.L1", "0.64", "0.60", "c.H2", "0.66", "0.65"],
+    "c.L3": ["0.65", "c.L4", "c.X26"],
+    "c.L4": ["c.L3", "0.66", "c.L5", "0.80"],
+    "c.L5": ["c.L4", "0.71", "0.80", "c.H2"],
+    "c.H2": ["c.L5", "0.70", "c.R4", "c.X22", "c.L2", "0.80", "stairs.0", "lift.0"],
+    "c.H4": ["0.73", "c.F4"],
+    "c.R1": ["0.44", "c.R2", "0.42", "c.X29", "c.X30"],
+    "c.R2": ["c.R1", "c.F3", "c.X31"],
+    "c.R3": ["0.60", "0.61", "c.R4", "c.X28", "c.X30"],
+    "c.R4": ["c.R3", "0.62", "c.H2", "c.X22", "c.X31"],
+    "c.F3": ["0.24", "c.F4", "c.R2", "c.X32"],
+    "c.F4": ["c.F3", "c.F5", "c.H4"],
+    "c.F5": ["c.F4", "0.22", "0.01", "c.X33"],
+    "c.B1": ["0.70", "c.X24", "c.X23"],
     "c.X20": ["c.L1", "0.60", "c.X27", "c.X30"],
     "c.X22": ["0.73", "c.H2", "c.R4"],
     "c.X23": ["c.X24", "c.X25"],
@@ -203,9 +203,9 @@ const GRAPH = {
     "c.X33": ["0.22", "c.F5"],
     // ── Stairs & lift — connect floors ───────────────────────────────────────
     "stairs.0": ["c.H2", "stairs.1"],
-    "lift.0":   ["c.H2", "lift.1"],
+    "lift.0": ["c.H2", "lift.1"],
     "stairs.1": ["stairs.0", "c.X37"],
-    "lift.1":   ["lift.0",   "c.X37"],
+    "lift.1": ["lift.0", "c.X37"],
     // ── Floor 1 ──────────────────────────────────────────────────────────────
     "1.02": ["c.X48"],
     "1.03": ["c.X48"],
@@ -282,11 +282,11 @@ function dijkstra(from, to) {
         const u = queue.shift()
         if (u === to) break
         visited.add(u)
-        ;(GRAPH[u] || []).forEach((v) => {
-            if (visited.has(v)) return
-            const alt = dist[u] + 1
-            if (alt < dist[v]) { dist[v] = alt; prev[v] = u }
-        })
+            ; (GRAPH[u] || []).forEach((v) => {
+                if (visited.has(v)) return
+                const alt = dist[u] + 1
+                if (alt < dist[v]) { dist[v] = alt; prev[v] = u }
+            })
     }
     const path = []
     let cur = to
@@ -321,15 +321,15 @@ function buildRouteMsg(path) {
 // ─── Component ────────────────────────────────────────────────────────────────
 function MapCombined() {
     const navigate = useNavigate()
-    const [fromId,   setFromId]   = useState(ALL_ROOMS[0].id)
-    const [toId,     setToId]     = useState(ALL_ROOMS[1].id)
-    const [path,     setPath]     = useState([])
+    const [fromId, setFromId] = useState(ALL_ROOMS[0].id)
+    const [toId, setToId] = useState(ALL_ROOMS[1].id)
+    const [path, setPath] = useState([])
     const [routeMsg, setRouteMsg] = useState('')
-    const [tooltip,  setTooltip]  = useState(null)
+    const [tooltip, setTooltip] = useState(null)
 
     // Which floor to display — auto-switches based on fromId
-    const activeFloor = nodeById(fromId)?.floor ?? 0
-    const floorImg = activeFloor === 0 ? floorplan0Img : floorplan1Img
+    const [displayFloor, setDisplayFloor] = useState(0)
+    const floorImg = displayFloor === 0 ? floorplan0Img : floorplan1Img
 
     const doNavigate = useCallback((from, to) => {
         if (from === to) { setPath([]); setRouteMsg('Je bent er al.'); return }
@@ -345,14 +345,20 @@ function MapCombined() {
 
     useEffect(() => { doNavigate(fromId, toId) }, [fromId, toId, doNavigate])
 
+    // Auto-switch displayed floor when start room changes
+    useEffect(() => {
+        const floor = nodeById(fromId)?.floor ?? 0
+        setDisplayFloor(floor)
+    }, [fromId])
+
     // Only show nodes on the active floor
-    const visibleRooms = ALL_ROOMS.filter((r) => r.floor === activeFloor)
-    const visiblePath  = path.filter((id) => nodeById(id)?.floor === activeFloor)
+    const visibleRooms = ALL_ROOMS.filter((r) => r.floor === displayFloor)
+    const visiblePath = path.filter((id) => nodeById(id)?.floor === displayFloor)
 
     const markerClass = (room) => {
-        if (room.id === fromId)          return 'map-marker map-marker--from'
-        if (room.id === toId)            return 'map-marker map-marker--to'
-        if (path.includes(room.id))      return 'map-marker map-marker--path'
+        if (room.id === fromId) return 'map-marker map-marker--from'
+        if (room.id === toId) return 'map-marker map-marker--to'
+        if (path.includes(room.id)) return 'map-marker map-marker--path'
         return 'map-marker'
     }
 
@@ -377,20 +383,14 @@ function MapCombined() {
                     {/* ── Floor tabs ── */}
                     <div className="map-floor-tabs">
                         <button
-                            className={`map-floor-tab${activeFloor === 0 ? ' map-floor-tab--active' : ''}`}
-                            onClick={() => {
-                                const firstBG = ROOMS_0[0]
-                                setFromId(firstBG.id)
-                            }}
+                            className={`map-floor-tab${displayFloor === 0 ? ' map-floor-tab--active' : ''}`}
+                            onClick={() => setDisplayFloor(0)}
                         >
                             Begane grond
                         </button>
                         <button
-                            className={`map-floor-tab${activeFloor === 1 ? ' map-floor-tab--active' : ''}`}
-                            onClick={() => {
-                                const firstEV = ROOMS_1[0]
-                                setFromId(firstEV.id)
-                            }}
+                            className={`map-floor-tab${displayFloor === 1 ? ' map-floor-tab--active' : ''}`}
+                            onClick={() => setDisplayFloor(1)}
                         >
                             Eerste verdieping
                         </button>
@@ -435,7 +435,7 @@ function MapCombined() {
                     {/* ── Floorplan ── */}
                     <div className="mapSection">
                         <div className="map-img-wrap">
-                            <img src={floorImg} alt={`Plattegrond ${activeFloor === 0 ? 'begane grond' : 'eerste verdieping'}`} className="map-floor-img" draggable={false} />
+                            <img src={floorImg} alt={`Plattegrond ${displayFloor === 0 ? 'begane grond' : 'eerste verdieping'}`} className="map-floor-img" draggable={false} />
                             <svg className="map-svg-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                                 <defs>
                                     <marker id="map-arrow" markerWidth="5" markerHeight="4" refX="3" refY="2" orient="auto">
