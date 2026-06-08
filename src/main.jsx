@@ -33,8 +33,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Faq" element={<Faq />} />
         <Route path="/Help" element={<Help />} />
         <Route path="/Email" element={<Email />} />
-        <Route path="/FloorMap" element={<FloorMap />} />
-        <Route path="/SecondFloor" element={<SecondFloor />} />
+        <Route path="/secondfloor" element={<SecondFloor />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

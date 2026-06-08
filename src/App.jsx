@@ -31,7 +31,7 @@ function App() {
                 <Link to="/Visiting" className="greenBtn homeNav__btn">
                     Bezoeken <FaArrowRight />
                 </Link>
-                <Link to="/FloorMap" className="greenBtn homeNav__btn">
+                <Link to="/Map" className="greenBtn homeNav__btn">
                     Plattegrond <FaArrowRight />
                 </Link>
                 <Link to="/OpeningHours" className="greenBtn homeNav__btn">
