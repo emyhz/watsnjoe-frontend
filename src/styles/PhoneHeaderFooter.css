@@ -7,11 +7,20 @@
     width: 100%;
     z-index: 999;
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     background-color: #ffffff;
-    padding: 12px 20px;
+    padding: 0;
     box-sizing: border-box;
+}
+
+.header__top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #ffffff;
 }
 
 /* Back arrow button tap container */
@@ -19,23 +28,20 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    
-    /* Perfect square mobile touch target */
     width: 48px;
     height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
     padding: 0;
     transition: transform 0.1s ease;
 }
 
 .header__back-icon {
-    width: 28px;               
+    width: 28px;
     height: 28px;
-    color: #000000;           
-    stroke-width: 2.75px;      
+    color: #000000;
+    stroke-width: 2.75px;
 }
 
 /* Tap feedback */
@@ -56,9 +62,81 @@
     display: block;
 }
 
+/* ── Banner row ──────────────────────────────────────────────────────────── */
+.header-banner {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #2BACE2;
+}
+
+.banner-red {
+    background-color: #C8303A;
+    height: 100%;
+    width: 160px; /* Slightly adjusted to balance the left side */
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    position: relative;
+    z-index: 3;
+}
+
+.banner-red::after {
+    content: '';
+    position: absolute;
+    right: -45px;
+    top: -9px;
+    width: 90px;
+    height: 90px;
+    background-color: #AE252E;
+    border-radius: 50%;
+    z-index: -1; 
+}
+
+.banner-title {
+    color: #ffffff;
+    font-family: Comfortaa, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.banner-purple {
+    background-color: #6B5B9E;
+    height: 100%;
+    width: 90px; /* Shrunk width significantly to show less purple */
+    position: absolute;
+    left: 160px; /* Aligned exactly where the red block ends */
+    z-index: 2;
+}
+
+.banner-purple::after {
+    content: '';
+    position: absolute;
+    right: -45px;
+    top: -9px;
+    width: 90px;
+    height: 90px;
+    background-color: #6B5B9E;
+    border-radius: 50%;
+}
+
+.banner-blue {
+    position: absolute;
+    left: 250px; /* Moved left (Red width 160px + Purple width 90px) to reveal more blue */
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #2BACE2;
+    z-index: 1;
+}
+
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 .bottomNav {
-    position: fixed; /* Changed from sticky to fixed to guarantee it stays at the bottom */
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -67,15 +145,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #211c38; /* Matches the dark navy in your mockup */
-    
-    /* Creates the rounded shape on all sides, matching the mockup */
-    border-radius: 28px 28px 28px 28px; 
-    
-    /* Gives it a little spacing from the screen edge like the mockup */
-    margin: 0 auto 12px; 
-    width: 92%; /* Restricts width so it floats cleanly like a pill */
-    
+    background-color: #211c38;
+    border-radius: 28px 28px 28px 28px;
+    margin: 0 auto 12px;
+    width: 92%;
     padding: 10px 24px 14px;
     box-sizing: border-box;
 }
@@ -88,37 +161,34 @@
     text-decoration: none;
 }
 
-/* FORCES the react-icons to be bright white and correctly sized */
 .bottomNav__item svg {
     color: #ffffff !important;
     fill: #ffffff !important;
-    font-size: 42px; /* Adjusted to look thick and clear like the mockup */
+    font-size: 42px;
     opacity: 1 !important;
 }
 
-/* Center Pin Wrapper to hold the background cutout circle */
+/* Center Pin Wrapper */
 .bottomNav__pin-wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 90px;
-    height: 45px; /* Keeps the navbar from stretching vertically */
+    height: 45px;
 }
 
-/* The dark blue backing bump behind the light blue circle */
 .bottomNav__pin-wrapper::before {
     content: '';
     position: absolute;
-    top: -48px; 
+    top: -48px;
     width: 92px;
     height: 92px;
-    background-color: #211c38; /* Must match .bottomNav background exactly */
+    background-color: #211c38;
     border-radius: 50%;
     z-index: 1;
 }
 
-/* The bright blue floating location button */
 .bottomNav__pin {
     position: relative;
     z-index: 2;
@@ -128,20 +198,19 @@
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background-color: #00a3e0; /* The exact vibrant cyan from your mockup */
+    background-color: #00a3e0;
     text-decoration: none;
-    margin-top: -50px; 
+    margin-top: -50px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* FORCES the location pin icon to be white and centered */
 .bottomNav__pin svg {
     color: #ffffff !important;
     fill: #ffffff !important;
     font-size: 44px;
 }
 
-/* ── Hallo banner ────────────────────────────────────────────────────────── */
+/* ── Hallo banner (legacy — kept for compatibility) ──────────────────────── */
 .halloBanner {
     position: relative;
     width: 100%;
@@ -186,7 +255,6 @@
     flex-direction: column;
     gap: 16px;
     padding: 32px 20px;
-    /* flex: 1;                    fills all remaining space between banner and footer */
 }
 
 .homeNav__btn {
@@ -196,8 +264,8 @@
     padding: 0 28px;
     font-size: 18px;
     width: 100%;
-    flex: 1;                    /* each button shares the available height equally */
-    min-height: 60px;           /* never shrink below this */
+    flex: 1;
+    min-height: 60px;
 }
 
 .homeNav__btn svg {

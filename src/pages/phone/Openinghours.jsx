@@ -42,12 +42,10 @@ function OpeningHours() {
 
     return (
         <>
-            <Phoneheader />
+            <Phoneheader title="Openingstijden" />
             
             <section id="center" className="hours-container">
-                <div className="hours-main-title">
-                    <h1>Openingstijden</h1>
-                </div>
+                
 
                 <div className="hours-accordion-list">
                     {scheduleData.map((item, index) => {
