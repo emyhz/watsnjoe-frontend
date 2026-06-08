@@ -101,12 +101,13 @@ main {
 .greenBtn {
     background-color: #9FC422;
     color: #FFFFFF;
-    padding: 18px 24px; /* Matches FAQ padding precisely */
-    border-radius: 30px; /* Capsule shape matching FAQ */
+    padding: 18px 24px; 
+    margin-bottom:10px;
+    border-radius: 30px; 
     cursor: pointer;
     text-decoration: none;
-    font-size: 15px; /* Matches .faq-button font size */
-    font-weight: 500; /* Matches .faq-button font weight */
+    font-size: 15px; 
+    font-weight: 500; 
     border: none;
     
     /* Layout match to behave like the FAQ bar if it contains an icon */
@@ -125,7 +126,6 @@ main {
     padding: 16px 22px; /* Offsets the 2px border so the box overall size doesn't jitter on hover */
 }
 
-/* SVG Icon handling inside the button */
 .greenBtn svg {
     background-color: transparent;
     fill: white;
