@@ -1,3 +1,45 @@
+/* ─── Floor switcher tabs ────────────────────────────────────────────────── */
+.map-floor-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 12px;
+    border-radius: var(--border-radius-md, 8px);
+    overflow: hidden;
+    border: 1.5px solid #ddd;
+}
+
+.map-floor-tab {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    background: #f5f4f0;
+    color: #888;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.map-floor-tab:first-child {
+    border-right: 1.5px solid #ddd;
+}
+
+.map-floor-tab:hover {
+    background: #eceae4;
+    color: #444;
+}
+
+.map-floor-tab--active {
+    background: #1a3a6b;
+    color: white;
+}
+
+.map-floor-tab--active:hover {
+    background: #1a3a6b;
+    color: white;
+    cursor: default;
+}
+
 /* ─── From/To controls ───────────────────────────────────────────────────── */
 .map-nav-controls {
     display: flex;
