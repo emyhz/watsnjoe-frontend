@@ -7,13 +7,50 @@
     width: 100%;
     z-index: 999;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; 
     align-items: center;
     background-color: #ffffff;
-    padding: 12px 0;
+    padding: 12px 20px;
+    box-sizing: border-box;
 }
 
-.header img {
+/* Back arrow button tap container */
+.header__back-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    
+    /* Perfect square mobile touch target */
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 0;
+    transition: transform 0.1s ease;
+}
+
+.header__back-icon {
+    width: 28px;               
+    height: 28px;
+    color: #000000;           
+    stroke-width: 2.75px;      
+}
+
+/* Tap feedback */
+.header__back-btn:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+/* Container for logo link */
+.header__logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo-container img {
     height: 36px;
     width: auto;
     display: block;
@@ -149,7 +186,7 @@
     flex-direction: column;
     gap: 16px;
     padding: 32px 20px;
-    flex: 1;                    /* fills all remaining space between banner and footer */
+    /* flex: 1;                    fills all remaining space between banner and footer */
 }
 
 .homeNav__btn {
