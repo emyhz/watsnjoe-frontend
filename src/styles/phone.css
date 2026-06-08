@@ -101,29 +101,40 @@ main {
 .greenBtn {
     background-color: #9FC422;
     color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 256px;
+    padding: 18px 24px; 
+    margin-bottom:10px;
+    border-radius: 30px; 
     cursor: pointer;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 15px; 
+    font-weight: 500; 
     border: none;
+    
+    /* Layout match to behave like the FAQ bar if it contains an icon */
+    display: inline-flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Makes it span full width of its container up to its max-width */
+    max-width: 420px; /* Matches .faq-list constraints */
+    transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
 }
 
 .greenBtn:hover {
     background-color: #FFFFFF;
     border: 2px solid #9FC422;
     color: #9FC422;
+    padding: 16px 22px; /* Offsets the 2px border so the box overall size doesn't jitter on hover */
 }
 
 .greenBtn svg {
     background-color: transparent;
     fill: white;
+    stroke: white; /* Ensures both fill and stroke icons stay white */
 }
 
 .greenBtn:hover svg {
-    background-color: transparent;
     fill: #9FC422;
+    stroke: #9FC422;
 }
 
 /*opening hours page */

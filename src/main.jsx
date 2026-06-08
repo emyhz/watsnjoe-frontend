@@ -8,7 +8,6 @@ import Visiting from "./pages/phone/Visiting";
 import OpeningHours from "./pages/phone/Openinghours";
 import Faq from "./pages/phone/Faq";
 import Help from "./pages/phone/Help";
-import Contactinfo from "./pages/phone/Contactinfo";
 import Splash from './pages/phone/Splash.jsx';
 import Welcome1 from './pages/phone/Welcome1.jsx';
 import Welcome2 from './pages/phone/Welcome2.jsx';
@@ -31,7 +30,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Map" element={<Map />} />
         <Route path="/OpeningHours" element={<OpeningHours />} />
         <Route path="/Faq" element={<Faq />} />
-        <Route path="/Contactinfo" element={<Contactinfo />} />
         <Route path="/Help" element={<Help />} />
         <Route path="/Email" element={<Email />} />
         <Route path="/FloorMap" element={<FloorMap />} />
