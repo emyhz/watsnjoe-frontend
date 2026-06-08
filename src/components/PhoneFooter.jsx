@@ -6,15 +6,18 @@ import '../styles/PhoneHeaderFooter.css';
 function PhoneFooter() {
     return (
         <footer className="bottomNav">
-            <Link to="/App" className="bottomNav__item">
+            <Link to="/App" className="bottomNav__item" aria-label="Home">
                 <FaHome />
             </Link>
 
-            <Link to="/Map" className="bottomNav__pin">
-                <MdLocationPin />
-            </Link>
+            {/* Wrapper added here to create the clean cutout outline */}
+            <div className="bottomNav__pin-wrapper">
+                <Link to="/Map" className="bottomNav__pin" aria-label="Map">
+                    <MdLocationPin />
+                </Link>
+            </div>
 
-            <Link to="/Help" className="bottomNav__item">
+            <Link to="/Help" className="bottomNav__item" aria-label="Help">
                 <FaQuestionCircle />
             </Link>
         </footer>
