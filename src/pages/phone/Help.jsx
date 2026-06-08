@@ -15,7 +15,6 @@ function Help() {
 
             <section id="center">
                 <div className="helpBtns">
-                    <Link to="/Contactinfo" className="blueBtn">Contact info</Link>
                     <Link to="/Faq" className="redBtn">FAQ</Link>
                 </div>
                 <Link to="/Contactinfo" className="greenBtn"><FaPhoneAlt /> 0881175700</Link>

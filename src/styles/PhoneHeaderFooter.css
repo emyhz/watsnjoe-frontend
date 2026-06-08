@@ -72,6 +72,9 @@
     overflow: hidden;
     flex-shrink: 0;
     background-color: #2BACE2;
+
+    margin-top: 24px;  
+    margin-bottom: 28px; 
 }
 
 .banner-red {
