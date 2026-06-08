@@ -4,12 +4,10 @@ import '../../styles/phone.css'
 import '../../styles/PhoneHeaderFooter.css'
 import Phoneheader from '../../components/PhoneHeader'
 import Phonefooter from '../../components/PhoneFooter'
-// Make sure this path points to your actual background image file
 import iconsBackground from '../../images/logos/icons-background.png'
 
 function Faq() {
     const [activeIndex, setActiveIndex] = useState(null);
-    // Setting this to true so the background stays visible for styling
     const [visible, setVisible] = useState(true); 
 
     const faqData = [
@@ -51,10 +49,17 @@ function Faq() {
         <>
             <Phoneheader />
             
-            {/* Background element injected for styling */}
-            <div className={`splash-bg-container ${visible ? 'splash-bg-container--visible' : ''}`}>
-                <img src={iconsBackground} alt="" className="splashBg splashBg--bottomLeft" aria-hidden="true" />
-            </div>   
+            {/* CLEAN ISOLATED BACKGROUND LAYER */}
+            {visible && (
+                <div className="faq-bg-fixed-layer">
+                    <img 
+                        src={iconsBackground} 
+                        alt="" 
+                        className="faq-bg-image-bottom" 
+                        aria-hidden="true" 
+                    />
+                </div>   
+            )}
 
             <section id="center" className="faq-container">
                 <div className="faq-list">
@@ -88,7 +93,8 @@ function Faq() {
                 </div>
             </section>
             
-            <Phonefooter /></>
+            <Phonefooter />
+        </>
     )
 }
 
