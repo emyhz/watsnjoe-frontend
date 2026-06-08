@@ -88,8 +88,7 @@ function Faq() {
                 </div>
             </section>
             
-            <Phonefooter />
-        </>
+            <Phonefooter /></>
     )
 }
 

@@ -21,9 +21,8 @@
 
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 .bottomNav {
-    position: sticky;
+    position: fixed; /* Changed from sticky to fixed to guarantee it stays at the bottom */
     bottom: 0;
-    bottom: env(safe-area-inset-bottom);
     left: 0;
     right: 0;
     width: 100%;
@@ -31,50 +30,78 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #231F3F;
-    border-radius: 20px 20px 0 0;
-    padding: 14px 40px 20px;
+    background-color: #211c38; /* Matches the dark navy in your mockup */
+    
+    /* Creates the rounded shape on all sides, matching the mockup */
+    border-radius: 28px 28px 28px 28px; 
+    
+    /* Gives it a little spacing from the screen edge like the mockup */
+    margin: 0 auto 12px; 
+    width: 92%; /* Restricts width so it floats cleanly like a pill */
+    
+    padding: 10px 24px 14px;
+    box-sizing: border-box;
 }
 
+/* Base style for standard items (Home & Help) */
 .bottomNav__item {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
     text-decoration: none;
-    font-size: 28px;
-    opacity: 0.8;
-    transition: opacity 0.15s;
 }
 
-.bottomNav__item:hover { opacity: 1; }
-
+/* FORCES the react-icons to be bright white and correctly sized */
 .bottomNav__item svg {
-    fill: #ffffff;
-    background: transparent;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    font-size: 42px; /* Adjusted to look thick and clear like the mockup */
+    opacity: 1 !important;
 }
 
+/* Center Pin Wrapper to hold the background cutout circle */
+.bottomNav__pin-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 45px; /* Keeps the navbar from stretching vertically */
+}
+
+/* The dark blue backing bump behind the light blue circle */
+.bottomNav__pin-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -48px; 
+    width: 92px;
+    height: 92px;
+    background-color: #211c38; /* Must match .bottomNav background exactly */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* The bright blue floating location button */
 .bottomNav__pin {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 54px;
-    height: 54px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background-color: #4CC9E0;
-    color: #ffffff;
+    background-color: #00a3e0; /* The exact vibrant cyan from your mockup */
     text-decoration: none;
-    font-size: 26px;
-    margin-top: -28px;
-    box-shadow: 0 4px 16px rgba(76, 201, 224, 0.5);
-    transition: transform 0.15s;
+    margin-top: -50px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.bottomNav__pin:hover { transform: translateY(-2px); }
-
+/* FORCES the location pin icon to be white and centered */
 .bottomNav__pin svg {
-    fill: #ffffff;
-    background: transparent;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    font-size: 44px;
 }
 
 /* ── Hallo banner ────────────────────────────────────────────────────────── */
