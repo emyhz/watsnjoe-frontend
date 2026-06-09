@@ -12,7 +12,8 @@ import floorplan1Img from '../../images/0floor_Page_2.jpeg'
 
 // ─── FLOOR 0 NODES ───────────────────────────────────────────────────────────
 const NODES_0 = [
-    { id: "0.01", label: "Ingang", area: "", px: 65.9, py: 78.3, floor: 0 },
+    { id: "0.01", label: "Project ruimte", area: "", px: 65.9, py: 77.4, floor: 0 },
+    { id: "0.70a", label: "Ingang", area: "", px: 44, py: 63, floor: 0 },
     { id: "0.80", label: "Grand Café", area: "", px: 24.5, py: 48.4, floor: 0 },
     { id: "0.70", label: "Bruisend Hart", area: "", px: 40.9, py: 52, floor: 0 },
     { id: "0.60", label: "Open Ruimte", area: "", px: 41.1, py: 20.2, floor: 0 },
@@ -68,9 +69,11 @@ const NODES_0 = [
     { id: "c.X33", corridor: true, px: 80.8, py: 58.8, floor: 0 },
     // ── Stairs & lift on floor 0 ─────────────────────────────────────────────
     // Adjust px/py to match actual staircase/lift positions on your floorplan
-    { id: "stairs.0", label: "Trap", stairs: true, px: 44, py: 43, floor: 0 },
-    { id: "lift.0", label: "Lift", lift: true, px: 46, py: 44, floor: 0 },
+    { id: "stairs.0", label: "Trap", stairs: true, px: 69.4, py: 67.8, floor: 0 },
+    { id: "lift.0", label: "Lift", lift: true, px: 61.3, py: 69.8, floor: 0 },
+    { id: "stairs.02", label: "Trap 2", stairs: true, px: 71.4, py: 38.4, floor: 0 },
 ]
+
 
 // ─── FLOOR 1 NODES ───────────────────────────────────────────────────────────
 const NODES_1 = [
@@ -139,8 +142,9 @@ const NODES_1 = [
     { id: "c.X60", corridor: true, px: 47.3, py: 61.2, floor: 1 },
     // ── Stairs & lift on floor 1 ─────────────────────────────────────────────
     // Adjust px/py to match actual staircase/lift positions on your floorplan
-    { id: "stairs.1", label: "Trap", stairs: true, px: 47.6, py: 37.6, floor: 1 },
+    { id: "stairs.1", label: "Trap", stairs: true, px: 69.5, py: 67.4, floor: 1 },
     { id: "lift.1", label: "Lift", lift: true, px: 49, py: 37, floor: 1 },
+    { id: "stairs.1.2", label: "Trap", stairs: true, px: 69.8, py: 32.5, floor: 1 },
 ]
 
 const ALL_NODES = [...NODES_0, ...NODES_1]
@@ -148,8 +152,9 @@ const ALL_NODES = [...NODES_0, ...NODES_1]
 // ─── COMBINED GRAPH ───────────────────────────────────────────────────────────
 const GRAPH = {
     // ── Floor 0 ──────────────────────────────────────────────────────────────
-    "0.01": ["c.F5"],
+    "0.01": ["c.F5", "0.70"],
     "0.80": ["c.L5", "c.H2", "c.L4"],
+    "0.70a": ["0.70"],
     "0.70": ["c.B1", "c.H2"],
     "0.60": ["c.L2", "c.R3", "c.X20", "c.L1", "c.X28"],
     "0.93": ["c.X26"],
@@ -203,9 +208,11 @@ const GRAPH = {
     "c.X33": ["0.22", "c.F5"],
     // ── Stairs & lift — connect floors ───────────────────────────────────────
     "stairs.0": ["c.H2", "stairs.1"],
+    "stairs.02": ["cR3"],
     "lift.0": ["c.H2", "lift.1"],
     "stairs.1": ["stairs.0", "c.X37"],
     "lift.1": ["lift.0", "c.X37"],
+    "stairs.1.2": ["c.X25", "c.X29", "c.X26", "stairs.02"],
     // ── Floor 1 ──────────────────────────────────────────────────────────────
     "1.02": ["c.X48"],
     "1.03": ["c.X48"],
@@ -296,8 +303,9 @@ function dijkstra(from, to) {
 
 function nodeById(id) { return ALL_NODES.find((n) => n.id === id) }
 
-const ROOMS_0 = NODES_0.filter((n) => !n.corridor && !n.stairs && !n.lift)
-const ROOMS_1 = NODES_1.filter((n) => !n.corridor && !n.stairs && !n.lift)
+// Change this (at module level, static):
+const ROOMS_0 = NODES_0.filter((n) => !n.corridor)
+const ROOMS_1 = NODES_1.filter((n) => !n.corridor)
 const ALL_ROOMS = [...ROOMS_0, ...ROOMS_1]
 
 // ─── Build route message with floor transition ────────────────────────────────
@@ -352,7 +360,7 @@ function MapCombined() {
     }, [fromId])
 
     // Only show nodes on the active floor
-    const visibleRooms = ALL_ROOMS.filter((r) => r.floor === displayFloor)
+    const visibleRooms = ALL_NODES.filter((n) => n.floor === displayFloor && !n.corridor)
     const visiblePath = path.filter((id) => nodeById(id)?.floor === displayFloor)
 
     const markerClass = (room) => {
