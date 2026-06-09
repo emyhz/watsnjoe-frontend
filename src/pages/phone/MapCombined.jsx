@@ -470,7 +470,6 @@ function MapCombined() {
                             <span className="map-legend-dot map-legend-dot--to" /> Naar
                             <span className="map-legend-dot map-legend-dot--path" /> Route
                         </div>
-                        <button className="printBtn" onClick={() => window.print()}><FaPrint /> Print</button>
                     </div>
                 </div>
             </section>
