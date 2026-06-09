@@ -12,9 +12,9 @@ import floorplan1Img from '../../images/0floor_Page_2.jpeg'
 
 // ─── FLOOR 0 NODES ───────────────────────────────────────────────────────────
 const NODES_0 = [
-    { id: "0.01", label: "Project ruimte", area: "", px: 65.9, py: 77.4, floor: 0 },
     { id: "0.70a", label: "Ingang", area: "", px: 44, py: 63, floor: 0 },
     { id: "0.80", label: "Grand Café", area: "", px: 24.5, py: 48.4, floor: 0 },
+    { id: "0.01", label: "Project ruimte", area: "", px: 65.9, py: 77.4, floor: 0 },
     { id: "0.70", label: "Bruisend Hart", area: "", px: 40.9, py: 52, floor: 0 },
     { id: "0.60", label: "Open Ruimte", area: "", px: 41.1, py: 20.2, floor: 0 },
     { id: "0.93", label: "0.93", area: "", px: 24.5, py: 7.5, floor: 0 },
