@@ -24,18 +24,14 @@ function App() {
 
     return (
         <div className="appPage">
-            <Phoneheader />
+            <Phoneheader title="Hallo!" />
 
-            <div className="halloBanner">
-                <span className="halloBanner__text">Hallo!</span>
-                <img src={iconsBackground} alt="" aria-hidden="true" className="halloBanner__shapes" />
-            </div>
 
             <section className="homeNav">
                 <Link to="/Visiting" className="greenBtn homeNav__btn">
                     Bezoeken <FaArrowRight />
                 </Link>
-                <Link to="/Map" className="greenBtn homeNav__btn">
+                <Link to="/MapCombined" className="greenBtn homeNav__btn">
                     Plattegrond <FaArrowRight />
                 </Link>
                 <Link to="/OpeningHours" className="greenBtn homeNav__btn">

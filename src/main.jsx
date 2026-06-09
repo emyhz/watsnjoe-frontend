@@ -8,13 +8,14 @@ import Visiting from "./pages/phone/Visiting";
 import OpeningHours from "./pages/phone/Openinghours";
 import Faq from "./pages/phone/Faq";
 import Help from "./pages/phone/Help";
-import Contactinfo from "./pages/phone/Contactinfo";
 import Splash from './pages/phone/Splash.jsx';
 import Welcome1 from './pages/phone/Welcome1.jsx';
 import Welcome2 from './pages/phone/Welcome2.jsx';
 import Welcome3 from './pages/phone/Welcome3.jsx';
 import Email from "./pages/phone/Email.jsx";
 import FloorMap from "./pages/phone/FloorMap.jsx";
+import SecondFloor from "./pages/phone/SecondFloor.jsx";
+import MapCombined from "./pages/phone/MapCombined.jsx";
 
 
 createRoot(document.getElementById('root')).render(
@@ -31,10 +32,10 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Map" element={<Map />} />
         <Route path="/OpeningHours" element={<OpeningHours />} />
         <Route path="/Faq" element={<Faq />} />
-        <Route path="/Contactinfo" element={<Contactinfo />} />
         <Route path="/Help" element={<Help />} />
         <Route path="/Email" element={<Email />} />
-        <Route path="/map" element={<FloorMap />} />
+        <Route path="/secondfloor" element={<SecondFloor />} />
+        <Route path="MapCombined" element={<MapCombined />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
