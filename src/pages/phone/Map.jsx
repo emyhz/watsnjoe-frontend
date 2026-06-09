@@ -9,11 +9,6 @@ import { FaPrint } from "react-icons/fa"
 import { useNavigate } from 'react-router-dom'
 import floorplanImg from '../../images/0floor_Page_1.png'
 
-// ─── NODES ────────────────────────────────────────────────────────────────────
-// Rooms: visible clickable markers
-// Corridors (corridor: true): invisible waypoints along actual hallways
-// px/py = % of image width/height from top-left
-
 const NODES = [
     { id: "0.01", label: "Ingang", area: "", px: 65.9, py: 78.3 },
     { id: "0.80", label: "Grand Café", area: "", px: 24.5, py: 48.4 },
@@ -70,7 +65,6 @@ const NODES = [
     { id: "c.X33", label: "c.X33", px: 80.8, py: 58.8, corridor: true }
 ]
 
-// ─── GRAPH ────────────────────────────────────────────────────────────────────
 const GRAPH = {
     "0.01": ["c.F5"],
     "0.80": ["c.L5", "c.H2", "c.L4"],
@@ -127,7 +121,6 @@ const GRAPH = {
     "c.X33": ["0.22", "c.F5"]
 }
 
-// ─── Dijkstra ─────────────────────────────────────────────────────────────────
 function dijkstra(from, to) {
     const dist = {}
     const prev = {}
@@ -155,7 +148,6 @@ function dijkstra(from, to) {
 function nodeById(id) { return NODES.find((n) => n.id === id) }
 const ROOMS = NODES.filter((n) => !n.corridor)
 
-// ─── Component ────────────────────────────────────────────────────────────────
 function Map() {
     const navigate = useNavigate()
     const [fromId, setFromId] = useState(ROOMS[0].id)
@@ -197,12 +189,10 @@ function Map() {
     return (
         <>
             <Phoneheader />
-
             <section id="center">
                 <div>
                     <h1>Plattegrond</h1>
 
-                    {/* ── Floor switcher ── */}
                     <div className="map-floor-tabs">
                         <button className="map-floor-tab map-floor-tab--active">
                             Begane grond
@@ -215,98 +205,42 @@ function Map() {
                         </button>
                     </div>
 
-                    {/* ── Van / Naar selects ── */}
                     <div className="map-nav-controls">
                         <div className="map-nav-group">
                             <label className="map-nav-label" htmlFor="map-from">Van</label>
-                            <select
-                                id="map-from"
-                                className="map-nav-select"
-                                value={fromId}
-                                onChange={(e) => setFromId(e.target.value)}
-                            >
-                                {ROOMS.map((r) => (
-                                    <option key={r.id} value={r.id}>{r.id} – {r.label}</option>
-                                ))}
+                            <select id="map-from" className="map-nav-select" value={fromId} onChange={(e) => setFromId(e.target.value)}>
+                                {ROOMS.map((r) => (<option key={r.id} value={r.id}>{r.id} – {r.label}</option>))}
                             </select>
                         </div>
-
-                        <button
-                            className="map-swap-btn"
-                            onClick={() => { setFromId(toId); setToId(fromId) }}
-                            title="Wissel"
-                        >⇄</button>
-
+                        <button className="map-swap-btn" onClick={() => { setFromId(toId); setToId(fromId) }} title="Wissel">⇄</button>
                         <div className="map-nav-group">
                             <label className="map-nav-label" htmlFor="map-to">Naar</label>
-                            <select
-                                id="map-to"
-                                className="map-nav-select"
-                                value={toId}
-                                onChange={(e) => setToId(e.target.value)}
-                            >
-                                {ROOMS.map((r) => (
-                                    <option key={r.id} value={r.id}>{r.id} – {r.label}</option>
-                                ))}
+                            <select id="map-to" className="map-nav-select" value={toId} onChange={(e) => setToId(e.target.value)}>
+                                {ROOMS.map((r) => (<option key={r.id} value={r.id}>{r.id} – {r.label}</option>))}
                             </select>
                         </div>
                     </div>
 
-                    {/* ── Floorplan ── */}
                     <div className="mapSection">
                         <div className="map-img-wrap">
-                            <img
-                                src={floorplanImg}
-                                alt="Plattegrond begane grond"
-                                className="map-floor-img"
-                                draggable={false}
-                            />
-
-                            <svg
-                                className="map-svg-overlay"
-                                viewBox="0 0 100 100"
-                                preserveAspectRatio="none"
-                                aria-hidden="true"
-                            >
+                            <img src={floorplanImg} alt="Plattegrond begane grond" className="map-floor-img" draggable={false} />
+                            <svg className="map-svg-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                                 <defs>
                                     <marker id="map-arrow" markerWidth="5" markerHeight="4" refX="3" refY="2" orient="auto">
                                         <polygon points="0 0, 5 2, 0 4" fill="#e08a1e" opacity="0.9" />
                                     </marker>
                                 </defs>
                                 {path.length > 1 && (
-                                    <polyline
-                                        points={pathPoints}
-                                        fill="none"
-                                        stroke="#e08a1e"
-                                        strokeWidth="0.55"
-                                        strokeDasharray="2,0.8"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        opacity="0.9"
-                                        markerEnd="url(#map-arrow)"
-                                    />
+                                    <polyline points={pathPoints} fill="none" stroke="#e08a1e" strokeWidth="0.55" strokeDasharray="2,0.8" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" markerEnd="url(#map-arrow)" />
                                 )}
                             </svg>
-
                             {ROOMS.map((room) => (
-                                <button
-                                    key={room.id}
-                                    className={markerClass(room)}
-                                    style={{ left: `${room.px}%`, top: `${room.py}%` }}
-                                    onClick={() => { if (room.id !== fromId) setToId(room.id) }}
-                                    onMouseEnter={() => setTooltip(room)}
-                                    onMouseLeave={() => setTooltip(null)}
-                                    aria-label={`Navigeer naar ${room.label}`}
-                                >
+                                <button key={room.id} className={markerClass(room)} style={{ left: `${room.px}%`, top: `${room.py}%` }} onClick={() => { if (room.id !== fromId) setToId(room.id) }} onMouseEnter={() => setTooltip(room)} onMouseLeave={() => setTooltip(null)} aria-label={`Navigeer naar ${room.label}`}>
                                     {room.id}
                                 </button>
                             ))}
-
                             {tooltip && (
-                                <div
-                                    className="map-tooltip"
-                                    style={{ left: `${tooltip.px}%`, top: `${tooltip.py}%` }}
-                                >
+                                <div className="map-tooltip" style={{ left: `${tooltip.px}%`, top: `${tooltip.py}%` }}>
                                     <strong>{tooltip.id}</strong> {tooltip.label}
                                     {tooltip.area && <span className="map-tooltip-area"> · {tooltip.area}</span>}
                                 </div>
@@ -314,7 +248,6 @@ function Map() {
                         </div>
                     </div>
 
-                    {/* ── Route info ── */}
                     <div className="map-route-info">
                         {path.length > 1
                             ? <><span className="map-route-badge">{path.length - 1} stap{path.length - 1 !== 1 ? 'pen' : ''}</span> {routeMsg}</>
@@ -322,21 +255,16 @@ function Map() {
                         }
                     </div>
 
-                    {/* ── Legend + print ── */}
                     <div className="mapbtns">
                         <div className="map-legend">
                             <span className="map-legend-dot map-legend-dot--from" /> Van
                             <span className="map-legend-dot map-legend-dot--to" /> Naar
                             <span className="map-legend-dot map-legend-dot--path" /> Route
                         </div>
-                        <button className="printBtn" onClick={() => window.print()}>
-                            <FaPrint /> Print
-                        </button>
+                        <button className="printBtn" onClick={() => window.print()}><FaPrint /> Print</button>
                     </div>
-
                 </div>
             </section>
-
             <Phonefooter />
         </>
     )

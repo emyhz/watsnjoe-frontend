@@ -7,23 +7,140 @@
     width: 100%;
     z-index: 999;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     background-color: #ffffff;
-    padding: 12px 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.header img {
+.header__top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #ffffff;
+}
+
+/* Back arrow button tap container */
+.header__back-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.1s ease;
+}
+
+.header__back-icon {
+    width: 28px;
+    height: 28px;
+    color: #000000;
+    stroke-width: 2.75px;
+}
+
+/* Tap feedback */
+.header__back-btn:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+/* Container for logo link */
+.header__logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo-container img {
     height: 36px;
     width: auto;
     display: block;
 }
 
+/* ── Banner row ──────────────────────────────────────────────────────────── */
+.header-banner {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #2BACE2;
+
+    margin-top: 24px;  
+    margin-bottom: 28px; 
+}
+
+.banner-red {
+    background-color: #C8303A;
+    height: 100%;
+    width: 160px; /* Slightly adjusted to balance the left side */
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    position: relative;
+    z-index: 3;
+}
+
+.banner-red::after {
+    content: '';
+    position: absolute;
+    right: -45px;
+    top: -9px;
+    width: 90px;
+    height: 90px;
+    background-color: #AE252E;
+    border-radius: 50%;
+    z-index: -1; 
+}
+
+.banner-title {
+    color: #ffffff;
+    font-family: Comfortaa, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.banner-purple {
+    background-color: #6B5B9E;
+    height: 100%;
+    width: 90px; /* Shrunk width significantly to show less purple */
+    position: absolute;
+    left: 160px; /* Aligned exactly where the red block ends */
+    z-index: 2;
+}
+
+.banner-purple::after {
+    content: '';
+    position: absolute;
+    right: -45px;
+    top: -9px;
+    width: 90px;
+    height: 90px;
+    background-color: #6B5B9E;
+    border-radius: 50%;
+}
+
+.banner-blue {
+    position: absolute;
+    left: 250px; /* Moved left (Red width 160px + Purple width 90px) to reveal more blue */
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #2BACE2;
+    z-index: 1;
+}
+
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 .bottomNav {
-    position: sticky;
+    position: fixed;
     bottom: 0;
-    bottom: env(safe-area-inset-bottom);
     left: 0;
     right: 0;
     width: 100%;
@@ -31,53 +148,72 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #231F3F;
-    border-radius: 20px 20px 0 0;
-    padding: 14px 40px 20px;
+    background-color: #211c38;
+    border-radius: 28px 28px 28px 28px;
+    margin: 0 auto 12px;
+    width: 92%;
+    padding: 10px 24px 14px;
+    box-sizing: border-box;
 }
 
+/* Base style for standard items (Home & Help) */
 .bottomNav__item {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
     text-decoration: none;
-    font-size: 28px;
-    opacity: 0.8;
-    transition: opacity 0.15s;
 }
 
-.bottomNav__item:hover { opacity: 1; }
-
 .bottomNav__item svg {
-    fill: #ffffff;
-    background: transparent;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    font-size: 42px;
+    opacity: 1 !important;
+}
+
+/* Center Pin Wrapper */
+.bottomNav__pin-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 45px;
+}
+
+.bottomNav__pin-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -48px;
+    width: 92px;
+    height: 92px;
+    background-color: #211c38;
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .bottomNav__pin {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 54px;
-    height: 54px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background-color: #4CC9E0;
-    color: #ffffff;
+    background-color: #00a3e0;
     text-decoration: none;
-    font-size: 26px;
-    margin-top: -28px;
-    box-shadow: 0 4px 16px rgba(76, 201, 224, 0.5);
-    transition: transform 0.15s;
+    margin-top: -50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
-.bottomNav__pin:hover { transform: translateY(-2px); }
 
 .bottomNav__pin svg {
-    fill: #ffffff;
-    background: transparent;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    font-size: 44px;
 }
 
-/* ── Hallo banner ────────────────────────────────────────────────────────── */
+/* ── Hallo banner (legacy — kept for compatibility) ──────────────────────── */
 .halloBanner {
     position: relative;
     width: 100%;
@@ -122,7 +258,6 @@
     flex-direction: column;
     gap: 16px;
     padding: 32px 20px;
-    flex: 1;                    /* fills all remaining space between banner and footer */
 }
 
 .homeNav__btn {
@@ -132,8 +267,8 @@
     padding: 0 28px;
     font-size: 18px;
     width: 100%;
-    flex: 1;                    /* each button shares the available height equally */
-    min-height: 60px;           /* never shrink below this */
+    flex: 1;
+    min-height: 60px;
 }
 
 .homeNav__btn svg {

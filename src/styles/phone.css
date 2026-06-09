@@ -101,29 +101,40 @@ main {
 .greenBtn {
     background-color: #9FC422;
     color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 256px;
+    padding: 18px 24px; 
+    margin-bottom:10px;
+    border-radius: 30px; 
     cursor: pointer;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 15px; 
+    font-weight: 500; 
     border: none;
+    
+    /* Layout match to behave like the FAQ bar if it contains an icon */
+    display: inline-flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Makes it span full width of its container up to its max-width */
+    max-width: 420px; /* Matches .faq-list constraints */
+    transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
 }
 
 .greenBtn:hover {
     background-color: #FFFFFF;
     border: 2px solid #9FC422;
     color: #9FC422;
+    padding: 16px 22px; /* Offsets the 2px border so the box overall size doesn't jitter on hover */
 }
 
 .greenBtn svg {
     background-color: transparent;
     fill: white;
+    stroke: white; /* Ensures both fill and stroke icons stay white */
 }
 
 .greenBtn:hover svg {
-    background-color: transparent;
     fill: #9FC422;
+    stroke: #9FC422;
 }
 
 /*opening hours page */
@@ -320,4 +331,328 @@ main {
     height: auto;
     float: left;
 
+}
+
+.faq-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq-list {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px; /* Distinct gap between closed tabs */
+}
+
+.faq-item-wrapper {
+    width: 100%;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Base button style (Closed state) */
+.faq-button {
+    width: 100%;
+    background-color: #9FC422; /* The specific lime/green from your second screenshot */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Full capsule look */
+    padding: 18px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: border-radius 0.2s ease, background-color 0.2s ease;
+}
+
+.faq-question {
+    max-width: 80%;
+    color:white;
+}
+
+.faq-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ─── OPEN STATE TRANSFORMATIONS ─── */
+
+.faq-item-wrapper.open .faq-button {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #9FC422;
+}
+
+.faq-item-wrapper .faq-answer-panel {
+    max-height: 0;
+    overflow: hidden;
+    background-color: rgba(154, 202, 40, 0.8);    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: max-height 0.3s ease-out;
+}
+
+.faq-item-wrapper.open .faq-answer-panel {
+    max-height: 250px; 
+}
+
+.faq-answer-content {
+    padding: 10px 24px 24px 24px;
+    color: white; /* Matches the white text from the 2nd picture */
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.faq-answer-content p {
+    color: white !important; /* Forces the text inside the <p> tag to be white */
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.faq-arrow svg {
+    stroke: white !important;
+}
+
+
+.faq-bg-fixed-layer {
+    position: fixed;
+    top: 0;
+    right: 0;            
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;          
+    overflow: hidden;
+    pointer-events: none; 
+}
+
+.faq-bg-image-bottom {
+    position: absolute;
+    top: 12%;             
+    right: -20%;            
+    width: 60%;          
+    height: 80%;          
+    object-fit: contain;  
+    object-position: right center; 
+    opacity: 1;      
+}
+
+/* Isolated Container for Opening Hours view */
+.hours-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hours-main-title {
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.hours-main-title h1 {
+    font-size: 28px;
+    color: #000000;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Accordion Component Elements */
+.hours-accordion-list {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hours-card-wrapper {
+    width: 100%;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    overflow: hidden; 
+}
+
+/* Button Control Setup */
+.hours-toggle-btn {
+    width: 100%;
+    background-color: #9FC422; 
+    border: none;
+    border-radius: 30px; 
+    padding: 18px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: border-radius 0.2s ease;
+}
+
+.hours-card-title {
+    color: #ffffff !important;
+}
+
+.hours-arrow-icon svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    font-size: 18px;
+    display: block;
+}
+
+/* Open Panel Modifier Classes */
+.hours-card-wrapper.hours-is-open .hours-toggle-btn {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.hours-dropdown-panel {
+    max-height: 0;
+    overflow: hidden;
+    background-color: rgba(159, 196, 34, 0.85); 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: max-height 0.3s ease-out;
+}
+
+.hours-card-wrapper.hours-is-open .hours-dropdown-panel {
+    max-height: 300px; 
+}
+
+/* Timetable Layout Design */
+.hours-dropdown-content {
+    padding: 12px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hours-data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.hours-day-label, 
+.hours-time-value {
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.hours-time-value {
+    text-align: right;
+}
+
+
+/* Help Page Specific Styles*/
+
+.help-page-container {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.address-info-card {
+    background-color: #9FC422;
+    width: 100%;
+    border-radius: 35px; 
+    padding: 32px 20px 24px 20px; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.address-info-card .address-title,
+.address-info-card .address-line {
+    color: #FFFFFF !important; 
+}
+
+.address-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.address-line {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+
+.inner-phone-card {
+    background-color: #231F3F;
+    width: 100%;
+    margin-top: 24px; 
+    padding: 16px 12px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.inner-phone-card * {
+    color: #FFFFFF !important;
+}
+
+.phone-label {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.phone-digits {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.faq-capsule-button {
+    background-color: #9FC422;
+    width: 100%;
+    border-radius: 30px; 
+    padding: 18px 28px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.faq-capsule-button * {
+    color: #FFFFFF !important;
+}
+
+.faq-chevron {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.faq-capsule-button:hover {
+    background-color: #8fb11f;
+}
+
+.faq-capsule-button:active {
+    transform: scale(0.99);
 }
