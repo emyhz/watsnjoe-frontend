@@ -21,7 +21,7 @@ function PhoneHeader({ title }) {
                 </button>
 
                 <div className="header__logo-container">
-                    <Link to="/">
+                    <Link to="/App">
                         <img src={logoColour} alt="WatsNJoe" />
                     </Link>
                 </div>
