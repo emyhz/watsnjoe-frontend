@@ -32,7 +32,7 @@ function PhoneFooter() {
             </Link>
 
             <div className="bottomNav__pin-wrapper">
-                <Link to="/Map" className="bottomNav__pin" aria-label="Map">
+                <Link to="/MapCombined" className="bottomNav__pin" aria-label="Map">
                     <MdLocationPin />
                 </Link>
             </div>
