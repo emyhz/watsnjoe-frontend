@@ -371,9 +371,6 @@ function MapCombined() {
         return n?.stairs || n?.lift
     })
 
-    const unreachable = ALL_ROOMS.filter(r => dijkstra(ALL_ROOMS[0].id, r.id).length === 0)
-    console.log('Unreachable:', unreachable.map(r => r.id))
-
     return (
         <>
             <Phoneheader />
@@ -400,6 +397,7 @@ function MapCombined() {
                         <div className="map-nav-group">
                             <label className="map-nav-label" htmlFor="map-from">Van</label>
                             <select id="map-from" className="map-nav-select" value={fromId} onChange={(e) => setFromId(e.target.value)}>
+                                <option value="" disabled>Kies een ruimte...</option>
                                 <optgroup label="Begane grond">
                                     {ROOMS_0.map((r) => <option key={r.id} value={r.id}>{r.id} – {r.label}</option>)}
                                 </optgroup>
@@ -444,8 +442,16 @@ function MapCombined() {
                                 )}
                             </svg>
                             {visibleRooms.map((room) => (
-                                <button key={room.id} className={markerClass(room)} style={{ left: `${room.px}%`, top: `${room.py}%` }} onClick={() => { if (room.id !== fromId) setToId(room.id) }} onMouseEnter={() => setTooltip(room)} onMouseLeave={() => setTooltip(null)} aria-label={`Navigeer naar ${room.label}`}>
-                                    {room.id}
+                                <button
+                                    key={room.id}
+                                    className={markerClass(room)}
+                                    style={{ left: `${room.px}%`, top: `${room.py}%` }}
+                                    onClick={() => { if (room.id !== fromId) setToId(room.id) }}
+                                    onMouseEnter={() => setTooltip(room)}
+                                    onMouseLeave={() => setTooltip(null)}
+                                    aria-label={`Navigeer naar ${room.label}`}
+                                >
+                                    {room.stairs ? '🚶' : room.lift ? '🛗' : room.id}
                                 </button>
                             ))}
                             {tooltip && (
