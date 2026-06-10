@@ -152,9 +152,6 @@
     display: block;
     user-select: none;
     -webkit-user-drag: none;
-    max-height: 48vh;
-    object-fit: contain;
-    background: #f5f4f0;
 }
 
 /* ─── SVG route overlay ──────────────────────────────────────────────────── */
@@ -344,10 +341,6 @@
 
     .map-swap-btn {
         align-self: center;
-    }
-
-    .map-floor-img {
-        max-height: 42vh;
     }
 }
 

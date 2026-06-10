@@ -207,8 +207,8 @@ const GRAPH = {
     "stairs.0": ["0c.H2", "stairs.1"],
     "stairs.02": ["0c.R3", "stairs.1.2"],
     "lift.0": ["0c.H2", "lift.1"],
-    "stairs.1": ["stairs.0", "1c.X37"],
     "stairs.1": ["stairs.0", "1c.X37", "1c.X36", "1c.X45", "1c.X29"],
+    "lift.1": ["lift.0", "1c.X37"],
     "stairs.1.2": ["1c.X25", "1c.X29", "1c.X26", "1c.X27", "stairs.02"],
     // ── Floor 1 rooms ────────────────────────────────────────────────────────
     "1.02": ["1c.X48"],
