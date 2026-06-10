@@ -5,7 +5,7 @@ import '../../styles/PhoneHeaderFooter.css'
 import Phoneheader from '../../components/PhoneHeader'
 import Phonefooter from '../../components/PhoneFooter'
 import { FaArrowRight } from "react-icons/fa";
-import logowatsnjoe from '../../images/logos/logo_blue_text.png'
+import logowatsnjoe from '../../images/logos/logo_white.png'
 
 
 function EmailPage() {
@@ -30,7 +30,7 @@ function EmailPage() {
                     {/* 2. Grey Welcome Banner */}
                     <div className="welcome-banner">
                         <h2>Goedemiddag, Beste Joost</h2>
-                        <p>Fijn dat u binnenkort langskomt. Hieronder vindt u alles voor een fijne aankomst bij Mijzo Eikendonk.</p>
+                        <p>Fijn dat u binnenkort langskomt. Hieronder vindt u alles voor een fijne aankomst bij Mijzo Zandley.</p>
                     </div>
 
                     {/* 3. Main Email Body Content */}

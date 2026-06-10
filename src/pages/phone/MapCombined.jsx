@@ -9,6 +9,7 @@ import { FaPrint } from "react-icons/fa"
 import { useNavigate } from 'react-router-dom'
 import floorplan0Img from '../../images/0floor_Page_1.png'
 import floorplan1Img from '../../images/0floor_Page_2.jpeg'
+import BannerTitle from '../../components/BannerTitle'
 
 // ─── FLOOR 0 NODES ───────────────────────────────────────────────────────────
 // All floor 0 corridor IDs are prefixed with "0." to avoid conflicts with floor 1
@@ -374,9 +375,9 @@ function MapCombined() {
     return (
         <>
             <Phoneheader />
+            <BannerTitle title="Plattegrond" />
             <section id="center">
                 <div>
-                    <h1>Plattegrond</h1>
 
                     <div className="map-floor-tabs">
                         <button

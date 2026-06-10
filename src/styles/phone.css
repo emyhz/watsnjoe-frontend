@@ -153,19 +153,18 @@ main {
 /* Email section */
 
 .email-app-wrapper {
-    background-color: #363535;
-    /* Dark sheet background inside the layout wrapper */
+    background-color: #ffffff; /* Clean white background */
     width: 100%;
     min-height: 100vh;
-    color: #e0e0e0;
+    color: #2d3748; /* Dark grey body text for high readability */
 }
 
-/* 1. Dark Blue Brand Header */
+/* 1. Brand Header */
 .email-header-banner {
-    background-color: #231F3F;
-    /* Deep navy tone from the banner */
+    background-color: #f8fafc; /* Very light cool grey/blue background */
     padding: 18px 12px;
     text-align: center;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .brand-logo {
@@ -178,49 +177,48 @@ main {
     gap: 2px;
 }
 
-
 .header-subtitle {
     display: block;
     font-size: 9px;
-    color: #a0a0c0;
+    color: #718096;
     margin-top: 4px;
 }
 
-/* 2. Grey Welcome Banner */
+/* 2. Welcome Banner */
 .welcome-banner {
-    background-color: #b3b3b3;
-    /* Solid grey header block */
-    color: #111111;
-    padding: 16px;
+    background-color: #edf2f7; /* Soft grey header block */
+    color: #1a202c; /* Dark text */
+    padding: 20px 16px;
 }
 
 .welcome-banner h2 {
     margin: 0 0 6px 0;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    color: white;
+    color: #1a202c;
 }
 
 .welcome-banner p {
     margin: 0;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.4;
-    color: white;
+    color: #4a5568;
 }
 
 /* 3. Main Email Body Content */
 .email-body-content {
-    padding: 20px 16px;
+    padding: 24px 16px;
 }
 
 .section-title {
-    color: #ffffff;
-    font-size: 14px;
+    color: #1a202c;
+    font-size: 15px;
+    font-weight: 700;
     margin-top: 0;
     margin-bottom: 12px;
 }
 
-/* Information Layout Rows using standard Flexbox */
+/* Information Layout Rows */
 .email-detail-row {
     display: flex;
     align-items: flex-start;
@@ -230,116 +228,119 @@ main {
 .email-icon {
     font-size: 16px;
     margin-right: 12px;
-    background-color: #242424;
-    /* Minimal visual frame around icons */
+    background-color: #f1f5f9; /* Light frame around icons */
     padding: 6px;
-    border-radius: 4px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 32px;
     height: 32px;
+    border: 1px solid #e2e8f0;
 }
 
 .email-text strong {
     font-size: 13px;
-    color: #ffffff;
+    color: #2d3748;
 }
 
 .email-text p {
     margin: 2px 0 0 0;
-    font-size: 12px;
-    color: white;
+    font-size: 13px;
+    color: #4a5568;
 }
 
 .underlined-link {
     text-decoration: underline;
-    color: #0400ff;
+    color: #3182ce; /* Friendly, accessible blue for light mode links */
     cursor: pointer;
 }
 
 .email-divider {
     border: 0;
-    border-top: 1px solid white;
-    margin: 20px 0;
+    border-top: 1px solid #e2e8f0; /* Soft border line */
+    margin: 24px 0;
 }
 
 .body-text {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.5;
-    color: white;
+    color: #4a5568;
     margin: 0;
 }
 
 .rules-list {
-    padding-left: 16px;
+    padding-left: 20px;
     margin: 0;
 }
 
 .rules-list li {
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 6px;
-    color: white;
+    color: #4a5568;
 }
 
 /* 4. Action Area & Purple Button */
 .email-action-zone {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 8%;
     margin-bottom: 5%;
 }
 
 .purple-app-btn {
-    background-color: #6758A2;
-    /* Royal purple match from image_4f351e.png */
+    background-color: #6758A2; /* Keeps your branding royal purple */
     color: #ffffff;
+    text-decoration: none; /* Strips default Link underline */
     border: none;
-    padding: 10px 18px;
-    font-size: 13px;
+    padding: 12px 20px;
+    font-size: 14px;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: opacity 0.15s ease-in-out;
+    box-shadow: 0 2px 4px rgba(103, 88, 162, 0.2);
+    transition: background-color 0.15s ease-in-out;
 }
 
 .purple-app-btn:hover {
-    opacity: 0.9;
+    background-color: #554789; /* Darkens slightly on hover */
 }
 
 .kiosk-note {
-    font-size: 16px;
-    color: white;
-    margin-top: 10px;
+    font-size: 13px;
+    color: #718096;
+    margin-top: 12px;
     margin-bottom: 0;
 }
 
 /* 5. Email Footer */
 .email-footer-banner {
-    background-color: #b3b3b3;
+    background-color: #edf2f7; /* Matches welcome banner tone */
     text-align: center;
     padding: 25px;
-    font-size: 11px;
+    font-size: 12px;
     margin-top: auto;
+    border-top: 1px solid #e2e8f0;
 }
 
 .email-footer-banner p {
     margin: 0;
-    color: white;
+    color: #718096;
 }
 
 .wats {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .wats img {
-    width: 90%;
+    width: auto;
+    max-width: 140px; /* Constrained for header sizing */
     height: auto;
-    float: left;
-
 }
 
 .faq-container {

@@ -4,6 +4,7 @@ import '../../styles/phone.css'
 import '../../styles/PhoneHeaderFooter.css'
 import Phoneheader from '../../components/PhoneHeader'
 import Phonefooter from '../../components/PhoneFooter'
+import BannerTitle from '../../components/BannerTitle'
 
 function Visiting() {
     return (
@@ -13,6 +14,8 @@ function Visiting() {
                 <h1>Bezoeken</h1>
             </section>
             <Phonefooter />
+            <BannerTitle title="Bezoeken" />
+
         </>
     )
 }

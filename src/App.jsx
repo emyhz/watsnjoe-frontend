@@ -5,6 +5,7 @@ import iconsBackground from "./images/logos/icons-background.png";
 import chickenImg from "./images/icons/duck_icon.png"; // replace with your chicken image path
 import Phoneheader from './components/PhoneHeader';
 import Phonefooter from './components/PhoneFooter';
+import BannerTitle from './components/BannerTitle';
 import './App.css';
 import './styles/phone.css';
 import './styles/PhoneHeaderFooter.css';
@@ -24,7 +25,9 @@ function App() {
 
     return (
         <div className="appPage">
-            <Phoneheader title="Hallo!" />
+            <Phoneheader/>
+            <BannerTitle title="Hallo!" />
+            
 
 
             <section className="homeNav">

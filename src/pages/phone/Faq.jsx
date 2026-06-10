@@ -4,11 +4,13 @@ import '../../styles/phone.css'
 import '../../styles/PhoneHeaderFooter.css'
 import Phoneheader from '../../components/PhoneHeader'
 import Phonefooter from '../../components/PhoneFooter'
+import BannerTitle from '../../components/BannerTitle'
 import iconsBackground from '../../images/logos/icons-background.png'
 
 function Faq() {
     const [activeIndex, setActiveIndex] = useState(null);
     const [visible, setVisible] = useState(true); 
+
 
     const faqData = [
         {
@@ -48,7 +50,8 @@ function Faq() {
     return (
         <>
             <Phoneheader />
-            
+            <BannerTitle title="FAQ" />
+
             {/* CLEAN ISOLATED BACKGROUND LAYER */}
             {visible && (
                 <div className="faq-bg-fixed-layer">

@@ -137,23 +137,33 @@
     z-index: 1;
 }
 
-/* ── Footer ──────────────────────────────────────────────────────────────── */
+/* ── Footer (Optimized & Hideable) ───────────────────────────────────────── */
 .bottomNav {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
     z-index: 999;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #211c38;
-    border-radius: 28px 28px 28px 28px;
+    border-radius: 20px; /* Slightly tightened from 28px */
     margin: 0 auto 12px;
-    width: 92%;
-    padding: 10px 24px 14px;
+    width: 94%; /* Slightly widened to utilize layout space cleanly */
+    padding: 8px 24px 10px; /* Tightened from 10px 24px 14px */
     box-sizing: border-box;
+    
+    /* Smooth transitions for Option 1 JavaScript scrolling toggles */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Hides the footer down past the bottom viewport line */
+.bottomNav--hidden {
+    transform: translateY(130%);
+    opacity: 0;
 }
 
 /* Base style for standard items (Home & Help) */
@@ -167,7 +177,7 @@
 .bottomNav__item svg {
     color: #ffffff !important;
     fill: #ffffff !important;
-    font-size: 42px;
+    font-size: 32px; /* Slightly slimmed down from 42px to stop overcrowding */
     opacity: 1 !important;
 }
 
@@ -177,16 +187,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90px;
-    height: 45px;
+    width: 76px; /* Adjusted down from 90px */
+    height: 38px; /* Adjusted down from 45px */
 }
 
 .bottomNav__pin-wrapper::before {
     content: '';
     position: absolute;
-    top: -48px;
-    width: 92px;
-    height: 92px;
+    top: -42px; /* Adjusted from -48px */
+    width: 80px; /* Adjusted from 92px */
+    height: 80px; /* Adjusted from 92px */
     background-color: #211c38;
     border-radius: 50%;
     z-index: 1;
@@ -198,19 +208,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 72px;
-    height: 72px;
+    width: 62px; /* Balanced down from 72px */
+    height: 62px; /* Balanced down from 72px */
     border-radius: 50%;
     background-color: #00a3e0;
     text-decoration: none;
-    margin-top: -50px;
+    margin-top: -44px; /* Adjusted from -50px */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .bottomNav__pin svg {
     color: #ffffff !important;
     fill: #ffffff !important;
-    font-size: 44px;
+    font-size: 36px; /* Adjusted down from 44px */
 }
 
 /* ── Hallo banner (legacy — kept for compatibility) ──────────────────────── */
