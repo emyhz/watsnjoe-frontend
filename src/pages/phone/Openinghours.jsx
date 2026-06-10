@@ -4,6 +4,7 @@ import '../../styles/phone.css'
 import '../../styles/PhoneHeaderFooter.css'
 import Phoneheader from '../../components/PhoneHeader'
 import Phonefooter from '../../components/PhoneFooter'
+import BannerTitle from '../../components/BannerTitle'
 import { FaChevronRight, FaChevronDown } from "react-icons/fa"
 
 function OpeningHours() {
@@ -43,6 +44,7 @@ function OpeningHours() {
     return (
         <>
             <Phoneheader title="Openingstijden" />
+            <BannerTitle title="Openingstijden" />
             
             <section id="center" className="hours-container">
                 
