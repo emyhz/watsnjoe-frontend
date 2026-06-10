@@ -67,7 +67,11 @@ const ROOMS_1 = [
     { id: "1.64", label: "Lokaal 1.64" },
 ]
 
-ROOMS_0.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
+ROOMS_0.sort((a, b) => {
+    if (a.id === '0.70a') return -1
+    if (b.id === '0.70a') return 1
+    return a.id.localeCompare(b.id, undefined, { numeric: true })
+})
 ROOMS_1.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
 
 function Visiting() {

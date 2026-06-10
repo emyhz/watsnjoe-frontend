@@ -60,14 +60,14 @@
 }
 
 .map-floor-tab--active {
-    background: #1a3a6b;
+    background: #9FC422;
     color: white;
-    border-color: #1a3a6b;
+    border-color: #9FC422;
     transform: translateY(-1px);
 }
 
 .map-floor-tab--active:hover {
-    background: #1a3a6b;
+    background: #9FC422;
     color: white;
     cursor: default;
     transform: translateY(-1px);
@@ -258,11 +258,11 @@
 }
 
 .map-route-badge {
-    background: #1a3a6b;
+    background: #9FC422;
     color: white;
     font-size: 10px;
     font-weight: 600;
-    padding: 2px 7px;
+    padding: 5px 10px;
     border-radius: 4px;
     white-space: nowrap;
     flex-shrink: 0;

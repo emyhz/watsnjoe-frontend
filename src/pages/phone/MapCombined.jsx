@@ -295,7 +295,11 @@ function nodeById(id) { return ALL_NODES.find((n) => n.id === id) }
 
 // After
 const ROOMS_0 = NODES_0.filter((n) => !n.corridor && !n.stairs && !n.lift)
-    .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
+    .sort((a, b) => {
+        if (a.id === '0.70a') return -1
+        if (b.id === '0.70a') return 1
+        return a.id.localeCompare(b.id, undefined, { numeric: true })
+    })
 const ROOMS_1 = NODES_1.filter((n) => !n.corridor && !n.stairs && !n.lift)
     .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
 const ALL_ROOMS = [...ROOMS_0, ...ROOMS_1]
@@ -424,7 +428,7 @@ function MapCombined() {
 
                     {crossesFloor && (
                         <div className="map-floor-notice">
-                            🏢 Route gaat via meerdere verdiepingen — gebruik de tabs om te wisselen
+                            Route gaat via meerdere verdiepingen — gebruik de tabs om te wisselen
                         </div>
                     )}
 
