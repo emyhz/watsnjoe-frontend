@@ -1,18 +1,16 @@
 import { useState, useCallback, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import '../../App.css'
 import '../../styles/phone.css'
 import '../../styles/PhoneHeaderFooter.css'
 import '../../styles/Map.css'
 import Phoneheader from '../../components/PhoneHeader'
 import Phonefooter from '../../components/PhoneFooter'
-import { FaPrint } from "react-icons/fa"
-import { useNavigate } from 'react-router-dom'
+import BannerTitle from '../../components/BannerTitle'
 import floorplan0Img from '../../images/0floor_Page_1.png'
 import floorplan1Img from '../../images/0floor_Page_2.jpeg'
-import BannerTitle from '../../components/BannerTitle'
 
 // ─── FLOOR 0 NODES ───────────────────────────────────────────────────────────
-// All floor 0 corridor IDs are prefixed with "0." to avoid conflicts with floor 1
 const NODES_0 = [
     { id: "0.70a", label: "Ingang", area: "", px: 44, py: 63, floor: 0 },
     { id: "0.80", label: "Grand Café", area: "", px: 24.5, py: 48.4, floor: 0 },
@@ -40,7 +38,6 @@ const NODES_0 = [
     { id: "0.22", label: "0.22", area: "", px: 80.5, py: 51.2, floor: 0 },
     { id: "0.23", label: "0.23", area: "", px: 71.6, py: 54.6, floor: 0 },
     { id: "0.14", label: "0.14", area: "", px: 81.5, py: 68.2, floor: 0 },
-    // Floor 0 corridor waypoints — prefixed with "0c." to avoid ID clashes with floor 1
     { id: "0c.L1", corridor: true, px: 33.3, py: 21.8, floor: 0 },
     { id: "0c.L2", corridor: true, px: 33.6, py: 27.1, floor: 0 },
     { id: "0c.L3", corridor: true, px: 19.6, py: 33.1, floor: 0 },
@@ -103,7 +100,6 @@ const NODES_1 = [
     { id: "1.63", label: "Lokaal 1.63", area: "110.63 m²", px: 41.4, py: 16.2, floor: 1 },
     { id: "1.64", label: "Lokaal 1.64", area: "107.13 m²", px: 40.8, py: 62.6, floor: 1 },
     { id: "1.23", label: "Lokaal 1.23", area: "", px: 62, py: 54.3, floor: 1 },
-    // Floor 1 corridor waypoints — prefixed with "1c."
     { id: "1c.X23", corridor: true, px: 58.3, py: 15.5, floor: 1 },
     { id: "1c.X24", corridor: true, px: 65.2, py: 15.5, floor: 1 },
     { id: "1c.X25", corridor: true, px: 65.6, py: 21.3, floor: 1 },
@@ -148,7 +144,6 @@ const ALL_NODES = [...NODES_0, ...NODES_1]
 
 // ─── GRAPH ────────────────────────────────────────────────────────────────────
 const GRAPH = {
-    // ── Floor 0 rooms ────────────────────────────────────────────────────────
     "0.70a": ["0.70"],
     "0.70": ["0c.B1", "0c.H2", "0.70a"],
     "0.80": ["0c.L5", "0c.H2", "0c.L4"],
@@ -175,7 +170,6 @@ const GRAPH = {
     "0.22": ["0c.F5", "0.24", "0.23", "0c.X32", "0c.X33"],
     "0.23": ["0.22"],
     "0.14": ["0c.X25"],
-    // ── Floor 0 corridors ────────────────────────────────────────────────────
     "0c.L1": ["0c.L2", "0c.X20", "0.64", "0.60"],
     "0c.L2": ["0c.L1", "0.64", "0.60", "0c.H2", "0.66", "0.65"],
     "0c.L3": ["0.65", "0c.L4", "0c.X26"],
@@ -204,14 +198,12 @@ const GRAPH = {
     "0c.X31": ["0c.R2", "0.72", "0c.R4"],
     "0c.X32": ["0c.F3", "0.22"],
     "0c.X33": ["0.22", "0c.F5"],
-    // ── Stairs & lift (connect floors) ───────────────────────────────────────
     "stairs.0": ["0c.H2", "stairs.1"],
     "stairs.02": ["0c.R3", "stairs.1.2"],
     "lift.0": ["0c.H2", "lift.1"],
     "stairs.1": ["stairs.0", "1c.X37", "1c.X36", "1c.X45", "1c.X29"],
     "lift.1": ["lift.0", "1c.X37"],
     "stairs.1.2": ["1c.X25", "1c.X29", "1c.X26", "1c.X27", "stairs.02"],
-    // ── Floor 1 rooms ────────────────────────────────────────────────────────
     "1.02": ["1c.X48"],
     "1.03": ["1c.X48"],
     "1.04": ["1c.X49"],
@@ -239,7 +231,6 @@ const GRAPH = {
     "1.63": ["1c.X32", "1c.X33"],
     "1.64": ["1c.X40", "1c.X56", "1c.X60"],
     "1.23": ["1c.X44", "1c.X39"],
-    // ── Floor 1 corridors ────────────────────────────────────────────────────
     "1c.X23": ["1c.X33", "1.44", "1c.X24"],
     "1c.X24": ["1c.X23", "1c.X25"],
     "1c.X25": ["1c.X24", "1.43", "1.30", "stairs.1.2"],
@@ -254,7 +245,8 @@ const GRAPH = {
     "1c.X34": ["1c.X35", "1.51", "1.52"],
     "1c.X35": ["1c.X32", "1.53", "1.52", "1c.X34"],
     "1c.X36": ["1c.X33", "1.61", "1c.X37", "1c.X59"],
-    "1c.X37": ["1c.X36", "1.60", "1c.X30", "1.62", "1c.X45", "1c.X60", "stairs.1", "lift.1"], "1c.X38": ["1.22", "1c.X46", "1.26"],
+    "1c.X37": ["1c.X36", "1.60", "1c.X30", "1.62", "1c.X45", "1c.X60", "stairs.1", "lift.1"],
+    "1c.X38": ["1.22", "1c.X46", "1.26"],
     "1c.X39": ["1.22", "1c.X41", "1.24", "1.23"],
     "1c.X40": ["1.64", "1c.X41", "1c.X57", "1c.X60"],
     "1c.X41": ["1c.X39", "1c.X42", "1c.X40"],
@@ -301,8 +293,11 @@ function dijkstra(from, to) {
 
 function nodeById(id) { return ALL_NODES.find((n) => n.id === id) }
 
+// After
 const ROOMS_0 = NODES_0.filter((n) => !n.corridor && !n.stairs && !n.lift)
+    .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
 const ROOMS_1 = NODES_1.filter((n) => !n.corridor && !n.stairs && !n.lift)
+    .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
 const ALL_ROOMS = [...ROOMS_0, ...ROOMS_1]
 
 function buildRouteMsg(path) {
@@ -323,13 +318,18 @@ function buildRouteMsg(path) {
 }
 
 function MapCombined() {
-    const navigate = useNavigate()
-    const [fromId, setFromId] = useState(ALL_ROOMS[0].id)
-    const [toId, setToId] = useState(ALL_ROOMS[1].id)
+    const location = useLocation()
+
+    // ── Read initial from/to from route state (set by MapSearch) ─────────────
+    const initialFrom = location.state?.from ?? ALL_ROOMS[0].id
+    const initialTo = location.state?.to ?? ALL_ROOMS[1].id
+
+    const [fromId, setFromId] = useState(initialFrom)
+    const [toId, setToId] = useState(initialTo)
     const [path, setPath] = useState([])
     const [routeMsg, setRouteMsg] = useState('')
     const [tooltip, setTooltip] = useState(null)
-    const [displayFloor, setDisplayFloor] = useState(0)
+    const [displayFloor, setDisplayFloor] = useState(nodeById(initialFrom)?.floor ?? 0)
 
     const floorImg = displayFloor === 0 ? floorplan0Img : floorplan1Img
 
@@ -398,7 +398,6 @@ function MapCombined() {
                         <div className="map-nav-group">
                             <label className="map-nav-label" htmlFor="map-from">Van</label>
                             <select id="map-from" className="map-nav-select" value={fromId} onChange={(e) => setFromId(e.target.value)}>
-                                <option value="" disabled>Kies een ruimte...</option>
                                 <optgroup label="Begane grond">
                                     {ROOMS_0.map((r) => <option key={r.id} value={r.id}>{r.id} – {r.label}</option>)}
                                 </optgroup>
@@ -431,15 +430,35 @@ function MapCombined() {
 
                     <div className="mapSection">
                         <div className="map-img-wrap">
-                            <img src={floorImg} alt={`Plattegrond ${displayFloor === 0 ? 'begane grond' : 'eerste verdieping'}`} className="map-floor-img" draggable={false} />
-                            <svg className="map-svg-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <img
+                                src={floorImg}
+                                alt={`Plattegrond ${displayFloor === 0 ? 'begane grond' : 'eerste verdieping'}`}
+                                className="map-floor-img"
+                                draggable={false}
+                            />
+                            <svg
+                                className="map-svg-overlay"
+                                viewBox="0 0 100 100"
+                                preserveAspectRatio="none"
+                                aria-hidden="true"
+                            >
                                 <defs>
                                     <marker id="map-arrow" markerWidth="5" markerHeight="4" refX="3" refY="2" orient="auto">
                                         <polygon points="0 0, 5 2, 0 4" fill="#e08a1e" opacity="0.9" />
                                     </marker>
                                 </defs>
                                 {visiblePath.length > 1 && (
-                                    <polyline points={pathPoints} fill="none" stroke="#e08a1e" strokeWidth="0.55" strokeDasharray="2,0.8" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" markerEnd="url(#map-arrow)" />
+                                    <polyline
+                                        points={pathPoints}
+                                        fill="none"
+                                        stroke="#e08a1e"
+                                        strokeWidth="0.55"
+                                        strokeDasharray="2,0.8"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        opacity="0.9"
+                                        markerEnd="url(#map-arrow)"
+                                    />
                                 )}
                             </svg>
                             {visibleRooms.map((room) => (
@@ -456,9 +475,14 @@ function MapCombined() {
                                 </button>
                             ))}
                             {tooltip && (
-                                <div className="map-tooltip" style={{ left: `${tooltip.px}%`, top: `${tooltip.py}%` }}>
+                                <div
+                                    className="map-tooltip"
+                                    style={{ left: `${tooltip.px}%`, top: `${tooltip.py}%` }}
+                                >
                                     <strong>{tooltip.id}</strong> {tooltip.label}
-                                    {tooltip.area && <span className="map-tooltip-area"> · {tooltip.area}</span>}
+                                    {tooltip.area && (
+                                        <span className="map-tooltip-area"> · {tooltip.area}</span>
+                                    )}
                                 </div>
                             )}
                         </div>
@@ -466,7 +490,12 @@ function MapCombined() {
 
                     <div className="map-route-info">
                         {path.length > 1
-                            ? <><span className="map-route-badge">{path.filter(id => !nodeById(id)?.corridor).length - 1} stap{path.length - 1 !== 1 ? 'pen' : ''}</span> {routeMsg}</>
+                            ? <>
+                                <span className="map-route-badge">
+                                    {path.filter(id => !nodeById(id)?.corridor).length - 1} stap{path.length - 1 !== 1 ? 'pen' : ''}
+                                </span>{' '}
+                                {routeMsg}
+                            </>
                             : <span className="map-route-empty">{routeMsg || 'Kies een start- en eindpunt.'}</span>
                         }
                     </div>
@@ -478,6 +507,7 @@ function MapCombined() {
                             <span className="map-legend-dot map-legend-dot--path" /> Route
                         </div>
                     </div>
+
                 </div>
             </section>
             <Phonefooter />
