@@ -52,7 +52,9 @@
 
 /* Container for logo link */
 .header__logo-container {
+    flex: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -414,4 +416,40 @@
 .skipBtn--green {
     background-color: #9FC422;
     color: #ffffff;
+}
+
+/* Language flags */
+.header__lang {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 4px;
+}
+
+.langFlag {
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.langFlag img {
+    width: 28px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 3px;
+    display: block;
+}
+
+.langFlag--active {
+    border-color: #9FC422;
+}
+
+.langFlag:hover {
+    transform: scale(1.1);
 }
