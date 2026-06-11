@@ -9,10 +9,12 @@ import '../../styles/PhoneHeaderFooter.css'
 
 const translations = {
     nl: {
+        title: 'Help',
         address: 'Adres',
         phone: 'Telefoonnummer',
     },
     en: {
+        title: 'Help',
         address: 'Address',
         phone: 'Phone number',
     }
@@ -25,8 +27,7 @@ function Help() {
     return (
         <>
             <Phoneheader />
-            <Phoneheader title="Help" />
-            <BannerTitle title="Bezoeken" />
+            <BannerTitle title={t.title} />
 
             <section className="help-page-container">
                 <div className="address-info-card">
