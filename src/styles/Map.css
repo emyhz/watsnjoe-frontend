@@ -33,43 +33,44 @@
 /* ─── Floor switcher tabs ────────────────────────────────────────────────── */
 .map-floor-tabs {
     display: flex;
-    gap: 0;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1.5px solid #ddd;
+    gap: 8px;
+    margin-bottom: 14px;
 }
 
 .map-floor-tab {
     flex: 1;
-    padding: 8px 12px;
-    font-size: 13px;
-    font-weight: 500;
-    border: none;
+    padding: 12px 8px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 2.5px solid #ddd;
+    border-radius: 12px;
     background: #f5f4f0;
     color: #888;
     cursor: pointer;
-    transition: background 0.15s, color 0.15s;
-}
-
-.map-floor-tab:first-child {
-    border-right: 1.5px solid #ddd;
+    transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
+    text-align: center;
+    letter-spacing: 0.01em;
 }
 
 .map-floor-tab:hover {
-    background: #eceae4;
+    background: #e8e6e0;
     color: #444;
+    border-color: #bbb;
+    transform: translateY(-1px);
 }
 
 .map-floor-tab--active {
     background: #1a3a6b;
     color: white;
+    border-color: #1a3a6b;
+    transform: translateY(-1px);
 }
 
 .map-floor-tab--active:hover {
     background: #1a3a6b;
     color: white;
     cursor: default;
+    transform: translateY(-1px);
 }
 
 /* ─── Van / Naar controls ────────────────────────────────────────────────── */
@@ -107,6 +108,8 @@
     cursor: pointer;
     outline: none;
     width: 100%;
+    max-height: 42px;
+    appearance: auto;
 }
 
 .map-nav-select:focus {
@@ -331,6 +334,59 @@
 .printBtn:hover {
     background: #152f58;
 }
+
+/* ── MapSearch page ─────────────────────────────────────────────────────────── */
+.map-search-page {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.map-search-intro {
+    font-size: 0.9rem;
+    color: var(--text-muted, #666);
+    margin: 0;
+}
+
+.map-search-submit {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+}
+
+.map-search-submit:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.map-search-same-room {
+    font-size: 0.82rem;
+    color: #c0392b;
+    margin: 0;
+    text-align: center;
+}
+
+/* ── Back button on MapCombined ──────────────────────────────────────────────── */
+.map-back-btn {
+    display: inline-block;
+    margin: 0.6rem 1rem 0;
+    padding: 0.35rem 0.75rem;
+    margin: 1rem;
+    font-size: 0.85rem;
+    color: var(--primary, #1a73e8);
+    background: none;
+    border: 1px solid var(--primary, #1a73e8);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.map-back-btn:hover {
+    background: rgba(26, 115, 232, 0.08);
+}
+
 
 /* ─── Mobile tweaks ──────────────────────────────────────────────────────── */
 @media (max-width: 400px) {

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Phoneheader from '../../components/PhoneHeader'
 import Phonefooter from '../../components/PhoneFooter'
 import useLangStore from '../../store/langStore'
+import BannerTitle from '../../components/BannerTitle'
 import '../../App.css'
 import '../../styles/phone.css'
 import '../../styles/PhoneHeaderFooter.css'
@@ -24,6 +25,8 @@ function Help() {
     return (
         <>
             <Phoneheader />
+            <Phoneheader title="Help" />
+            <BannerTitle title="Bezoeken" />
 
             <section className="help-page-container">
                 <div className="address-info-card">
