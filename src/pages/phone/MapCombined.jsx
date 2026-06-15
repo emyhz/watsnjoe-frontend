@@ -434,8 +434,8 @@ function MapCombined() {
     // If the user arrived here via the "Visiting" page (which lets them pick
     // a from/to room beforehand), use those choices. Otherwise fall back to
     // the first two rooms in the combined list as sensible defaults.
-    const initialFrom = location.state?.from ?? ALL_ROOMS[0].id
-    const initialTo = location.state?.to ?? ALL_ROOMS[1].id
+    const initialFrom = location.state?.from ?? "0.70a"
+    const initialTo = location.state?.to ?? ALL_ROOMS.find(r => r.id !== "0.70a")?.id ?? ALL_ROOMS[1].id
 
     const [fromId, setFromId] = useState(initialFrom)     // selected starting room id
     const [toId, setToId] = useState(initialTo)           // selected destination room id
