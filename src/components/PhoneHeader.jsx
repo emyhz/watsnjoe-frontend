@@ -1,9 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import logoColour from "../images/logos/logo_no-bg.png";
+import flagEN from "../images/icons/English.png";
+import flagNL from "../images/icons/NL.webp";
+import useLangStore from "../store/langStore";
 import '../styles/PhoneHeaderFooter.css';
 
-function PhoneHeader({ title }) {
+function PhoneHeader() {
     const navigate = useNavigate();
+    const { lang, setLang } = useLangStore();
 
     return (
         <header className="header">
@@ -24,6 +28,23 @@ function PhoneHeader({ title }) {
                     <Link to="/App">
                         <img src={logoColour} alt="WatsNJoe" />
                     </Link>
+                </div>
+
+                <div className="header__lang">
+                    <button
+                        className={`langFlag ${lang === 'en' ? 'langFlag--active' : ''}`}
+                        onClick={() => setLang('en')}
+                        aria-label="Switch to English"
+                    >
+                        <img src={flagEN} alt="English" />
+                    </button>
+                    <button
+                        className={`langFlag ${lang === 'nl' ? 'langFlag--active' : ''}`}
+                        onClick={() => setLang('nl')}
+                        aria-label="Schakel naar Nederlands"
+                    >
+                        <img src={flagNL} alt="Nederlands" />
+                    </button>
                 </div>
             </div>
         </header>
