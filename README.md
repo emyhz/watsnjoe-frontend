@@ -11,7 +11,6 @@ A mobile-first wayfinding web application for a care facility (woonzorgcentrum).
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Pages & Routing](#pages--routing)
-- [Internationalization](#internationalization)
 - [Testing](#testing)
 - [Scripts](#scripts)
 
