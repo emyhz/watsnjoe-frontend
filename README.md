@@ -1,4 +1,4 @@
-# WatsNJoe Frontend
+# Watsnjoe Frontend
 
 A mobile-first wayfinding web application for a care facility (woonzorgcentrum). It helps residents and visitors navigate through the building with interactive floor maps, opening hours, FAQ, and multilingual support (Dutch/English).
 
