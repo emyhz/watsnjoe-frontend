@@ -7,6 +7,30 @@ import '../../styles/Map.css'
 import Phoneheader from '../../components/PhoneHeader'
 import Phonefooter from '../../components/PhoneFooter'
 import BannerTitle from '../../components/BannerTitle'
+import useLangStore from '../../store/langStore'
+
+const translations = {
+    nl: {
+        title: 'Bezoeken',
+        from: 'Van',
+        to: 'Naar',
+        groundFloor: 'Begane grond',
+        firstFloor: 'Eerste verdieping',
+        showRoute: 'Toon route →',
+        sameRoom: 'Kies een andere bestemming dan het vertrekpunt.',
+        swapTitle: 'Wissel van en naar',
+    },
+    en: {
+        title: 'Visiting',
+        from: 'From',
+        to: 'To',
+        groundFloor: 'Ground floor',
+        firstFloor: 'First floor',
+        showRoute: 'Show route →',
+        sameRoom: 'Please choose a different destination than your starting point.',
+        swapTitle: 'Swap from and to',
+    }
+}
 
 const ROOMS_0 = [
     { id: "0.70a", label: "Ingang" },
@@ -76,6 +100,8 @@ ROOMS_1.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
 
 function Visiting() {
     const navigate = useNavigate()
+    const { lang } = useLangStore()
+    const t = translations[lang]
     const [fromId, setFromId] = useState(ROOMS_0[0].id)
     const [toId, setToId] = useState(ROOMS_0[1].id)
 
@@ -91,24 +117,24 @@ function Visiting() {
     return (
         <>
             <Phoneheader />
-            <BannerTitle title="Bezoeken" />
+            <BannerTitle title={t.title} />
             <section id="center">
 
                 <div className="map-nav-controls">
                     <div className="map-nav-group">
-                        <label className="map-nav-label" htmlFor="visit-from">Van</label>
+                        <label className="map-nav-label" htmlFor="visit-from">{t.from}</label>
                         <select
                             id="visit-from"
                             className="map-nav-select"
                             value={fromId}
                             onChange={(e) => setFromId(e.target.value)}
                         >
-                            <optgroup label="Begane grond">
+                            <optgroup label={t.groundFloor}>
                                 {ROOMS_0.map((r) => (
                                     <option key={r.id} value={r.id}>{r.id} – {r.label}</option>
                                 ))}
                             </optgroup>
-                            <optgroup label="Eerste verdieping">
+                            <optgroup label={t.firstFloor}>
                                 {ROOMS_1.map((r) => (
                                     <option key={r.id} value={r.id}>{r.id} – {r.label}</option>
                                 ))}
@@ -119,25 +145,25 @@ function Visiting() {
                     <button
                         className="map-swap-btn"
                         onClick={handleSwap}
-                        title="Wissel van en naar"
+                        title={t.swapTitle}
                     >
                         ⇄
                     </button>
 
                     <div className="map-nav-group">
-                        <label className="map-nav-label" htmlFor="visit-to">Naar</label>
+                        <label className="map-nav-label" htmlFor="visit-to">{t.to}</label>
                         <select
                             id="visit-to"
                             className="map-nav-select"
                             value={toId}
                             onChange={(e) => setToId(e.target.value)}
                         >
-                            <optgroup label="Begane grond">
+                            <optgroup label={t.groundFloor}>
                                 {ROOMS_0.map((r) => (
                                     <option key={r.id} value={r.id}>{r.id} – {r.label}</option>
                                 ))}
                             </optgroup>
-                            <optgroup label="Eerste verdieping">
+                            <optgroup label={t.firstFloor}>
                                 {ROOMS_1.map((r) => (
                                     <option key={r.id} value={r.id}>{r.id} – {r.label}</option>
                                 ))}
@@ -153,11 +179,11 @@ function Visiting() {
                         onClick={handleSubmit}
                         disabled={fromId === toId}
                     >
-                        Toon route →
+                        {t.showRoute}
                     </button>
                     {fromId === toId && (
                         <p style={{ fontSize: '0.82rem', color: '#c0392b', textAlign: 'center', marginTop: '0.4rem' }}>
-                            Kies een andere bestemming dan het vertrekpunt.
+                            {t.sameRoom}
                         </p>
                     )}
                 </div>

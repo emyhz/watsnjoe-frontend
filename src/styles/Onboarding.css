@@ -350,3 +350,12 @@
 .welcomeBtn--skip:hover {
     background-color: #c44050;
 }
+
+.welcomeLang {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+}
